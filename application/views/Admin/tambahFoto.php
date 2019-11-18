@@ -110,7 +110,11 @@
             <input class="form-control" name="judul_foto" id="judul_foto" type="text"  required="required" >
             <p class="help-block text-danger"></p>
           </div>
-          
+          <p>Caption Foto : </p>
+          <div class="form-group">
+            <textarea class="form-control" name="caption_foto" id="caption_foto" required="required" ></textarea>
+            <p class="help-block text-danger"></p>
+            </div>
           <p>Foto Berita : </p>
           <div class="form-group">
             <input type="file" id="foto_galeri" name="foto_galeri">

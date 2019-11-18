@@ -30,10 +30,11 @@ public function getFoto(){
         }
 }*/
 
-public function tambahGambar($judul_foto,  $foto_galeri){
+public function tambahGambar($judul_foto, $caption_foto, $foto_galeri){
         $data = array(
             
             'judul_foto' => $judul_foto,
+            'caption_foto' => $caption_foto,
             
             'foto_galeri' => $foto_galeri
             );

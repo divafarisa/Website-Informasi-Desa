@@ -58,13 +58,49 @@
               </a>
               <div class="portfolio-caption">
              <center>  <h5><?php echo $f->judul_foto?></h5>
-                </div>
+                <p class="text-muted"><?php echo $f->caption_foto?></p></center> 
+              </div>
             </div>
           <?php }?>
         </div>
       </div>
     </section>
-    
+    <!-- Modal 1 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <?php foreach ($foto as $f){?>
+      <div class="portfolio-modal modal fade" id="porfolioModal<?php echo $f->id_foto; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase"><?php echo $f->judul_foto; ?></h2>
+                    <p class="item-intro text-muted"><?php echo $f->tanggal_foto?></p>
+                    <p class="item-intro text-muted"><?php echo $f->caption_foto?></p>
+                    <img class="img-fluid" src="<?php echo base_url();?>Assets/foto/<?php echo $f->foto_galeri?>" alt="">
+                    <button>
+                      
+                    </button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php }?>
+
+  
+
+
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="<?php echo base_url();?>Assets/jquery/jquery-2.2.4.min.js"></script>

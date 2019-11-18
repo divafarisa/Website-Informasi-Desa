@@ -117,6 +117,7 @@
                 <tr>
                 <th scope="col">Id Gambar</th>
                 <th scope="col">Judul Gambar</th>
+                <th scope="col">Caption Gambar</th>
                 <th scope="col">Tanggal Unggah</th>
                 
                 <th scope="col">Foto</th>
@@ -130,6 +131,7 @@
               <tbody>
               <td><?php echo $f->id_foto ?></td>
               <td><?php echo $f->judul_foto ?></a></td>
+              <td><?php echo $f->caption_foto?></td>
               <td><?php echo $f->tanggal_foto?></td>
               
               <td><img src="<?php echo base_url();?>Assets/foto/<?php echo $f->foto_galeri?>" width="100" height="100"></td>
@@ -139,46 +141,3 @@
               </tbody>
           <?php } } ?>
       </table>    
-
-        
-
-
-
-
-
-
-
-    </div>
-    <!-- /.content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Page level plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
-
-  <!-- Demo scripts for this page-->
-  <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
-  <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
-
-</body>
-
-</html>

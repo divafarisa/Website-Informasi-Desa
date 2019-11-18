@@ -35,6 +35,7 @@ class C_Galeri extends CI_Controller {
 	public function tambah()
     {
         $judul_foto = $this->input->post('judul_foto', true);
+        $caption_foto = $this->input->post('caption_foto', true);
         
         $this->load->library('upload');
         $config['upload_path'] = './Assets/foto/'; 
@@ -47,7 +48,7 @@ class C_Galeri extends CI_Controller {
             if ($this->upload->do_upload('foto_galeri'))
             {
                 $foto = $this->upload->data();
-                $this->M_Galeri->tambahGambar($judul_foto, $foto['file_name']);
+                $this->M_Galeri->tambahGambar($judul_foto, $caption_foto, $foto['file_name']);
                 redirect('C_Galeri/ShowHalamanGaleri');
 
             }
