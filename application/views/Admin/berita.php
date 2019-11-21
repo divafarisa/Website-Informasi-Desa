@@ -113,6 +113,7 @@
                 <th scope="col">Id Berita</th>
                 <th scope="col">Judul Berita</th>
                 <th scope="col">Tanggal Unggah</th>
+                <th scope="col">Status</th>
                 <th scope="col">Foto</th>
                 <th scope="col">Hapus</th>
                 </tr>
@@ -125,6 +126,7 @@
               <td><?php echo $b->id_berita ?></td>
               <td><a href="<?php echo base_url();?>C_Berita/showDetailBerita?id_berita=<?php echo $b->id_berita?>" class="post-title"><?php echo $b->judul_berita ?></a></td>
               <td><?php echo $b->tanggal_berita?></td>
+              <td><?php echo $b->status?></td>
               <td><img src="<?php echo base_url();?>Assets/foto/<?php echo $b->foto_berita?>" width="100" height="100"></td>
               <td>
               <a href="<?php echo base_url();?>C_Berita/hapusBerita?id_berita=<?php echo $b->id_berita?>">Delete</a>

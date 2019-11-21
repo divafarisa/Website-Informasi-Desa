@@ -59,6 +59,7 @@
               Informasi
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<?php echo base_url();?>/C_Berita/ShowUserTambahBerita">Tambah Berita</a>
               <a class="dropdown-item" href="<?php echo base_url();?>/C_Berita/ShowBerita">Berita</a>
               <a class="dropdown-item" href="<?php echo base_url();?>/C_Artikel/ShowArtikel">Artikel</a>
               

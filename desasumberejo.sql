@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Nov 2019 pada 16.46
--- Versi server: 10.1.36-MariaDB
--- Versi PHP: 7.2.10
+-- Generation Time: Nov 21, 2019 at 11:55 AM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `password_admin`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `password_admin`) 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agama`
+-- Table structure for table `agama`
 --
 
 CREATE TABLE `agama` (
@@ -57,7 +57,7 @@ CREATE TABLE `agama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `agama`
+-- Dumping data for table `agama`
 --
 
 INSERT INTO `agama` (`id_agama`, `nama_agama`, `lk_agama`, `pr_agama`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `agama` (`id_agama`, `nama_agama`, `lk_agama`, `pr_agama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `apbd`
+-- Table structure for table `apbd`
 --
 
 CREATE TABLE `apbd` (
@@ -77,7 +77,7 @@ CREATE TABLE `apbd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `apbd`
+-- Dumping data for table `apbd`
 --
 
 INSERT INTO `apbd` (`id_apbd`, `tahun_apbd`, `foto_apbd`) VALUES
@@ -86,19 +86,19 @@ INSERT INTO `apbd` (`id_apbd`, `tahun_apbd`, `foto_apbd`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `artikel`
+-- Table structure for table `artikel`
 --
 
 CREATE TABLE `artikel` (
   `id_artikel` int(10) NOT NULL,
   `judul_artikel` varchar(200) NOT NULL,
-  `tanggal_artikel` timestamp(6) NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `tanggal_artikel` timestamp(6) NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `isi_artikel` text NOT NULL,
   `foto_artikel` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `artikel`
+-- Dumping data for table `artikel`
 --
 
 INSERT INTO `artikel` (`id_artikel`, `judul_artikel`, `tanggal_artikel`, `isi_artikel`, `foto_artikel`) VALUES
@@ -107,31 +107,35 @@ INSERT INTO `artikel` (`id_artikel`, `judul_artikel`, `tanggal_artikel`, `isi_ar
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `berita`
+-- Table structure for table `berita`
 --
 
 CREATE TABLE `berita` (
   `id_berita` int(10) NOT NULL,
   `judul_berita` varchar(200) NOT NULL,
-  `tanggal_berita` datetime(6) DEFAULT CURRENT_TIMESTAMP(6),
+  `tanggal_berita` datetime(6) DEFAULT current_timestamp(6),
   `isi_berita` longtext NOT NULL,
-  `foto_berita` varchar(255) DEFAULT NULL
+  `foto_berita` varchar(255) DEFAULT NULL,
+  `nama_penulis` varchar(30) NOT NULL,
+  `status` enum('pending','tolak','terbit') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `berita`
+-- Dumping data for table `berita`
 --
 
-INSERT INTO `berita` (`id_berita`, `judul_berita`, `tanggal_berita`, `isi_berita`, `foto_berita`) VALUES
-(13, 'Undangan Warga Sumberejo ', '2019-09-25 10:07:53.456201', 'Kepada seluruh warga Sumberejo diharapkan datang pada acara peresmian taman desa sumberejo pada hari jumat, 27 September 2019 di Balaikota Desa Sumberejo. Undangan terlampir', 'Undangan_Warga_Sumberejo__1569380896.jpg'),
-(14, 'Tiga Bakal Calon Tak Lolos Verifikasi, Desa Sumberejo Buka Pendaftaran Pilkades Tahap III', '2019-09-25 10:18:40.055897', 'Bukan hanya Desa Gunungsari Kecamatan Bumiaji yang harus membuka pendaftaran pemilihan kepala desa (pilkades) tahap dua. Desa Sumberejo, Kecamatan Batu juga harus melakukan pendaftaran tahap dua.\r\n\r\nDesa Sumberejo terpaksa harus melakukan  pembukaan pendaftaran tahap dua, lantaran bakal calon tidak memenuhi persyaratan. Desa Sumberejo tersebut tidak memenuhi persyaratan karena empat bakal calon yang mengambil formulir tidak lolos verifikasi.\r\n\r\nMereka yang melakukan pilkades Desa Sumberejo ada Riyanto (incumbent), Tekat, dan Novi Dwi Istika. “Sayangnya ada yang persyaratan yang tidak memenuhi,” ungkap Kasubag Pemerintahan Desa Bag Pemerintahan Kota Batu, Abdul Salam.\r\n\r\nSedangkan di Desa Gunungsari hanya memiliki satu bakal calon kepala desa yakni Andi Susili yang merupakan incambent. Karena itu pendaftaran tahap II dibuka pada 9-28 Agustus mendatang. “Hal ini mengacu pada Perda Kota Batu No 1 tahun 2015 tentang Desa dan Diubah No 5 tahun 2018. Serta Perwali No 32 tahun 2016 yang diubah No 76 tahun 2017,” katanya.\r\n\r\nSedang dalam Pilkades tahun 2019 ini ada 11 desa yang mengikuti. Ada 35 bakal calon kepala desa yang mengambil formulir. Di masing-masing desa itu ada bakal calon yang melakukan pendaftaran rata-rata 2-5 orang per desanya. Dari data 11 desa yang masuk di Bagian Pemerintahan Kota Batu, berikut nama calon yang telah mengambil formulir.\r\n\r\nAntara lain di Kecamatan Bumiaji ada Desa Tulungrejo yang memiliki lima bakal calon yakni Mardianto, Prastiono, Adi Sasmito, Suliono (incumbent), dan Arrohman Mustofa.\r\n\r\nLalu di Desa Bumiaji ada Edi Susanto (incumbent), Suhariono, dam Ali Mustofa (mantan anggota DPRD). Kemudian Desa Gunungsari ada satu orang yakni Andi Susili (incumbent). Lainnya di Desa Punten ada Hening Trisunu (Sekdes Punten) dan Suliani. Sedangkan di Desa Giripurno ada Maskut dan Suntoro.\r\n\r\nUntuk di Kecamatan Batu ada Desa Sidomulyo bakal calon kepala desa yang mendaftar ada Suharto (incumbent), Hanafi (anggota BPD ), Hernanto (mantan sekdes). Lalu di Desa Sumberejo ada Riyanto (incumbent), Tekat, dan Novi Dwi Istika. Kemudian Desa Oro-Oro Ombo ada Wiweko (incamben), Lukito Bowo, Kandam, Heri pranowo, dan Gatot.\r\n\r\nSedangkan di Kecamatan Junrejo ada Desa Beji bakal calonnya ada Wawan Sulistiono, Deni Cahyono, Iwan Riswanto, dan Dedi Irawan.Lalu untuk Desa Torongrejo ada Moh Yakni (Mantan Sekdes), Kateni (incumbent), Sugeng Santoso yang juga yang juga mantan kades, dan Jaya. Dan di Desa Junrejo ada Andi faizal H (incumbent), Rohmad Santoso (mantan kades), dan Hadi Wignya (mantan kasun).', 'Tiga_Bakal_Calon_Tak_Lolos_Verifikasi,_Desa_Sumberejo_Buka_Pendaftaran_Pilkades_Tahap_III_1569469012.jpg'),
-(15, 'Sumberejo Jadi Desa Percontohan Pemberdayaan Desa', '2019-09-26 08:57:47.698804', '  Hari sabtu kemarin (6/01) kantor Balai Desa Sumberejo terlihat penuh oleh rombongan dari Desa Manyarejo Gresik. Mulai pukul 11.30 WIB, rombongan yang berjumlah sekitar 80 orang termasuk mengunjungi Desa Sumberejo yaitu dalam rangka studi banding pemberdayaan desa. Rombongan dari Gresik merupakan gabungan dari tim pembentukan dan penguatan kader pemberdayaan Desa Manyarejo Kecamatan Manyar Kabupaten Gresik sekaligus sebagian perangkat desa seperti Kepdes dan Sekdes. Kader yang diikutkan pada kegiatan studi banding ini merupakan gabungan ibu-ibu dari anggota guru, PKK, maupun ibu-ibu pejabat desa. Kunjungan ini bertujuan untuk menambah wawasan dan bagi kader Desa Manyarejo untuk pemberdayaan desa terlebih dalam mempercantik lingkungan yang notabene memiliki kemiripan dengan Desa Sumberejo yaitu sebagai lingkungan sentra sayuran.\r\n\r\n            Kegiatan ini dibuka dengan pembacaan susunan acara dan doa oleh mahasiswa KKM dari UIN Malang yang sedang mengabdi di Desa Sumberejo. Acara dilanjutkan dengan sambutan oleh Kepala Desa Manyarejo. Tidak mengambil waktu lama, acara selanjutnya yakni acara inti yang diisi materi oleh Bapak Suharsono, S.H selaku koordinator Desa Wisata Sumberejo sekaligus perangkat desa. Materi yang disampaikan bertema pengelolaan lingkungan berbasir masyarakat yang meliputi (KRPL) Kawasan Rumah Pangan Lestari dan bank sampah. Setelah mendapatkan materi, rombongan diajak untuk berkeliling di RW 07 yang baru saja mendapatkan juara pertama sebagai kampung tercantik se-Kota Batu di tahun 2018.  Diharapkan acara ini dapat mempererat tali silaturrahim antar Desa Manyarejo dan Desa Sumberejo sekaligus adanya transfer ilmu antardesa sehingga program pemberdayaan desa dapat terlaksana secara maksimal.', 'Sumberejo_Jadi_Desa_Percontohan_Pemberdayaan_Desa_1569463067.jpg'),
-(17, 'Ini berita', '2019-09-26 11:48:29.448525', 'Ini berita', 'Ini_berita_1569473309.jpg');
+INSERT INTO `berita` (`id_berita`, `judul_berita`, `tanggal_berita`, `isi_berita`, `foto_berita`, `nama_penulis`, `status`) VALUES
+(13, 'Undangan Warga Sumberejo ', '2019-09-25 10:07:53.456201', 'Kepada seluruh warga Sumberejo diharapkan datang pada acara peresmian taman desa sumberejo pada hari jumat, 27 September 2019 di Balaikota Desa Sumberejo. Undangan terlampir', 'Undangan_Warga_Sumberejo__1574311022.jpg', 'Desa Sumberejo', 'terbit'),
+(14, 'Tiga Bakal Calon Tak Lolos Verifikasi, Desa Sumberejo Buka Pendaftaran Pilkades Tahap III', '2019-09-25 10:18:40.055897', 'Bukan hanya Desa Gunungsari Kecamatan Bumiaji yang harus membuka pendaftaran pemilihan kepala desa (pilkades) tahap dua. Desa Sumberejo, Kecamatan Batu juga harus melakukan pendaftaran tahap dua.\r\n\r\nDesa Sumberejo terpaksa harus melakukan  pembukaan pendaftaran tahap dua, lantaran bakal calon tidak memenuhi persyaratan. Desa Sumberejo tersebut tidak memenuhi persyaratan karena empat bakal calon yang mengambil formulir tidak lolos verifikasi.\r\n\r\nMereka yang melakukan pilkades Desa Sumberejo ada Riyanto (incumbent), Tekat, dan Novi Dwi Istika. “Sayangnya ada yang persyaratan yang tidak memenuhi,” ungkap Kasubag Pemerintahan Desa Bag Pemerintahan Kota Batu, Abdul Salam.\r\n\r\nSedangkan di Desa Gunungsari hanya memiliki satu bakal calon kepala desa yakni Andi Susili yang merupakan incambent. Karena itu pendaftaran tahap II dibuka pada 9-28 Agustus mendatang. “Hal ini mengacu pada Perda Kota Batu No 1 tahun 2015 tentang Desa dan Diubah No 5 tahun 2018. Serta Perwali No 32 tahun 2016 yang diubah No 76 tahun 2017,” katanya.\r\n\r\nSedang dalam Pilkades tahun 2019 ini ada 11 desa yang mengikuti. Ada 35 bakal calon kepala desa yang mengambil formulir. Di masing-masing desa itu ada bakal calon yang melakukan pendaftaran rata-rata 2-5 orang per desanya. Dari data 11 desa yang masuk di Bagian Pemerintahan Kota Batu, berikut nama calon yang telah mengambil formulir.\r\n\r\nAntara lain di Kecamatan Bumiaji ada Desa Tulungrejo yang memiliki lima bakal calon yakni Mardianto, Prastiono, Adi Sasmito, Suliono (incumbent), dan Arrohman Mustofa.\r\n\r\nLalu di Desa Bumiaji ada Edi Susanto (incumbent), Suhariono, dam Ali Mustofa (mantan anggota DPRD). Kemudian Desa Gunungsari ada satu orang yakni Andi Susili (incumbent). Lainnya di Desa Punten ada Hening Trisunu (Sekdes Punten) dan Suliani. Sedangkan di Desa Giripurno ada Maskut dan Suntoro.\r\n\r\nUntuk di Kecamatan Batu ada Desa Sidomulyo bakal calon kepala desa yang mendaftar ada Suharto (incumbent), Hanafi (anggota BPD ), Hernanto (mantan sekdes). Lalu di Desa Sumberejo ada Riyanto (incumbent), Tekat, dan Novi Dwi Istika. Kemudian Desa Oro-Oro Ombo ada Wiweko (incamben), Lukito Bowo, Kandam, Heri pranowo, dan Gatot.\r\n\r\nSedangkan di Kecamatan Junrejo ada Desa Beji bakal calonnya ada Wawan Sulistiono, Deni Cahyono, Iwan Riswanto, dan Dedi Irawan.Lalu untuk Desa Torongrejo ada Moh Yakni (Mantan Sekdes), Kateni (incumbent), Sugeng Santoso yang juga yang juga mantan kades, dan Jaya. Dan di Desa Junrejo ada Andi faizal H (incumbent), Rohmad Santoso (mantan kades), dan Hadi Wignya (mantan kasun).', 'Tiga_Bakal_Calon_Tak_Lolos_Verifikasi,_Desa_Sumberejo_Buka_Pendaftaran_Pilkades_Tahap_III_1574311007.jpeg', 'Desa Sumberejo', 'terbit'),
+(15, 'Sumberejo Jadi Desa Percontohan Pemberdayaan Desa', '2019-09-26 08:57:47.698804', '  Hari sabtu kemarin (6/01) kantor Balai Desa Sumberejo terlihat penuh oleh rombongan dari Desa Manyarejo Gresik. Mulai pukul 11.30 WIB, rombongan yang berjumlah sekitar 80 orang termasuk mengunjungi Desa Sumberejo yaitu dalam rangka studi banding pemberdayaan desa. Rombongan dari Gresik merupakan gabungan dari tim pembentukan dan penguatan kader pemberdayaan Desa Manyarejo Kecamatan Manyar Kabupaten Gresik sekaligus sebagian perangkat desa seperti Kepdes dan Sekdes. Kader yang diikutkan pada kegiatan studi banding ini merupakan gabungan ibu-ibu dari anggota guru, PKK, maupun ibu-ibu pejabat desa. Kunjungan ini bertujuan untuk menambah wawasan dan bagi kader Desa Manyarejo untuk pemberdayaan desa terlebih dalam mempercantik lingkungan yang notabene memiliki kemiripan dengan Desa Sumberejo yaitu sebagai lingkungan sentra sayuran.\r\n\r\n            Kegiatan ini dibuka dengan pembacaan susunan acara dan doa oleh mahasiswa KKM dari UIN Malang yang sedang mengabdi di Desa Sumberejo. Acara dilanjutkan dengan sambutan oleh Kepala Desa Manyarejo. Tidak mengambil waktu lama, acara selanjutnya yakni acara inti yang diisi materi oleh Bapak Suharsono, S.H selaku koordinator Desa Wisata Sumberejo sekaligus perangkat desa. Materi yang disampaikan bertema pengelolaan lingkungan berbasir masyarakat yang meliputi (KRPL) Kawasan Rumah Pangan Lestari dan bank sampah. Setelah mendapatkan materi, rombongan diajak untuk berkeliling di RW 07 yang baru saja mendapatkan juara pertama sebagai kampung tercantik se-Kota Batu di tahun 2018.  Diharapkan acara ini dapat mempererat tali silaturrahim antar Desa Manyarejo dan Desa Sumberejo sekaligus adanya transfer ilmu antardesa sehingga program pemberdayaan desa dapat terlaksana secara maksimal.', 'Sumberejo_Jadi_Desa_Percontohan_Pemberdayaan_Desa_1574310995.jpg', 'Desa Sumberejo', 'terbit'),
+(17, 'Ini berita', '2019-09-26 11:48:29.448525', 'Ini berita', 'Ini_berita_1574310962.jpg', 'Desa Sumberejo', 'terbit'),
+(19, 'mari kita coba', '2019-11-21 10:56:09.009369', 'haiiii', 'mari_kita_coba_1574311041.jpg', 'Desa Sumberejo', 'pending'),
+(20, 'bismillah', '2019-11-21 12:30:09.112392', 'haiiii', 'bismillah_1574314209.png', 'momo', 'terbit');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `etnis`
+-- Table structure for table `etnis`
 --
 
 CREATE TABLE `etnis` (
@@ -142,7 +146,7 @@ CREATE TABLE `etnis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `etnis`
+-- Dumping data for table `etnis`
 --
 
 INSERT INTO `etnis` (`id_etnis`, `nama_etnis`, `lk_etnis`, `pr_etnis`) VALUES
@@ -152,19 +156,19 @@ INSERT INTO `etnis` (`id_etnis`, `nama_etnis`, `lk_etnis`, `pr_etnis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `foto`
+-- Table structure for table `foto`
 --
 
 CREATE TABLE `foto` (
   `id_foto` int(10) NOT NULL,
   `judul_foto` varchar(200) NOT NULL,
   `caption_foto` varchar(255) NOT NULL,
-  `tanggal_foto` datetime DEFAULT CURRENT_TIMESTAMP,
+  `tanggal_foto` datetime DEFAULT current_timestamp(),
   `foto_galeri` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `foto`
+-- Dumping data for table `foto`
 --
 
 INSERT INTO `foto` (`id_foto`, `judul_foto`, `caption_foto`, `tanggal_foto`, `foto_galeri`) VALUES
@@ -177,7 +181,7 @@ INSERT INTO `foto` (`id_foto`, `judul_foto`, `caption_foto`, `tanggal_foto`, `fo
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kontak`
+-- Table structure for table `kontak`
 --
 
 CREATE TABLE `kontak` (
@@ -191,7 +195,7 @@ CREATE TABLE `kontak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kontak`
+-- Dumping data for table `kontak`
 --
 
 INSERT INTO `kontak` (`id_kontak`, `email_kontak`, `nohp_kontak`, `nowa_kontak`, `ig_kontak`, `fb_kontak`, `tw_kontak`) VALUES
@@ -200,7 +204,7 @@ INSERT INTO `kontak` (`id_kontak`, `email_kontak`, `nohp_kontak`, `nowa_kontak`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `organisasi`
+-- Table structure for table `organisasi`
 --
 
 CREATE TABLE `organisasi` (
@@ -211,7 +215,7 @@ CREATE TABLE `organisasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `organisasi`
+-- Dumping data for table `organisasi`
 --
 
 INSERT INTO `organisasi` (`id_org`, `nama_org`, `foto_org`, `deskripsi_org`) VALUES
@@ -222,7 +226,7 @@ INSERT INTO `organisasi` (`id_org`, `nama_org`, `foto_org`, `deskripsi_org`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `perangkat`
+-- Table structure for table `perangkat`
 --
 
 CREATE TABLE `perangkat` (
@@ -233,7 +237,7 @@ CREATE TABLE `perangkat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `perangkat`
+-- Dumping data for table `perangkat`
 --
 
 INSERT INTO `perangkat` (`id_perangkat`, `tahun_perangkat`, `nama_perangkat`, `jabatan_perangkat`) VALUES
@@ -246,7 +250,7 @@ INSERT INTO `perangkat` (`id_perangkat`, `tahun_perangkat`, `nama_perangkat`, `j
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `profesi`
+-- Table structure for table `profesi`
 --
 
 CREATE TABLE `profesi` (
@@ -257,7 +261,7 @@ CREATE TABLE `profesi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `profesi`
+-- Dumping data for table `profesi`
 --
 
 INSERT INTO `profesi` (`id_profesi`, `nama_profesi`, `lk_profesi`, `pr_profesi`) VALUES
@@ -266,7 +270,7 @@ INSERT INTO `profesi` (`id_profesi`, `nama_profesi`, `lk_profesi`, `pr_profesi`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `umkm`
+-- Table structure for table `umkm`
 --
 
 CREATE TABLE `umkm` (
@@ -277,7 +281,7 @@ CREATE TABLE `umkm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `umkm`
+-- Dumping data for table `umkm`
 --
 
 INSERT INTO `umkm` (`id_umkm`, `nama_umkm`, `foto_umkm`, `deskripsi_umkm`) VALUES
@@ -289,149 +293,149 @@ INSERT INTO `umkm` (`id_umkm`, `nama_umkm`, `foto_umkm`, `deskripsi_umkm`) VALUE
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `agama`
+-- Indexes for table `agama`
 --
 ALTER TABLE `agama`
   ADD PRIMARY KEY (`id_agama`);
 
 --
--- Indeks untuk tabel `apbd`
+-- Indexes for table `apbd`
 --
 ALTER TABLE `apbd`
   ADD PRIMARY KEY (`id_apbd`);
 
 --
--- Indeks untuk tabel `artikel`
+-- Indexes for table `artikel`
 --
 ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id_artikel`);
 
 --
--- Indeks untuk tabel `berita`
+-- Indexes for table `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
--- Indeks untuk tabel `etnis`
+-- Indexes for table `etnis`
 --
 ALTER TABLE `etnis`
   ADD PRIMARY KEY (`id_etnis`);
 
 --
--- Indeks untuk tabel `foto`
+-- Indexes for table `foto`
 --
 ALTER TABLE `foto`
   ADD PRIMARY KEY (`id_foto`);
 
 --
--- Indeks untuk tabel `kontak`
+-- Indexes for table `kontak`
 --
 ALTER TABLE `kontak`
   ADD PRIMARY KEY (`id_kontak`);
 
 --
--- Indeks untuk tabel `organisasi`
+-- Indexes for table `organisasi`
 --
 ALTER TABLE `organisasi`
   ADD PRIMARY KEY (`id_org`);
 
 --
--- Indeks untuk tabel `perangkat`
+-- Indexes for table `perangkat`
 --
 ALTER TABLE `perangkat`
   ADD PRIMARY KEY (`id_perangkat`);
 
 --
--- Indeks untuk tabel `profesi`
+-- Indexes for table `profesi`
 --
 ALTER TABLE `profesi`
   ADD PRIMARY KEY (`id_profesi`);
 
 --
--- Indeks untuk tabel `umkm`
+-- Indexes for table `umkm`
 --
 ALTER TABLE `umkm`
   ADD PRIMARY KEY (`id_umkm`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `agama`
+-- AUTO_INCREMENT for table `agama`
 --
 ALTER TABLE `agama`
   MODIFY `id_agama` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `apbd`
+-- AUTO_INCREMENT for table `apbd`
 --
 ALTER TABLE `apbd`
   MODIFY `id_apbd` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `artikel`
+-- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
   MODIFY `id_artikel` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `berita`
+-- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `etnis`
+-- AUTO_INCREMENT for table `etnis`
 --
 ALTER TABLE `etnis`
   MODIFY `id_etnis` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `foto`
+-- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
   MODIFY `id_foto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `kontak`
+-- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
   MODIFY `id_kontak` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `organisasi`
+-- AUTO_INCREMENT for table `organisasi`
 --
 ALTER TABLE `organisasi`
   MODIFY `id_org` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `perangkat`
+-- AUTO_INCREMENT for table `perangkat`
 --
 ALTER TABLE `perangkat`
   MODIFY `id_perangkat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `profesi`
+-- AUTO_INCREMENT for table `profesi`
 --
 ALTER TABLE `profesi`
   MODIFY `id_profesi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `umkm`
+-- AUTO_INCREMENT for table `umkm`
 --
 ALTER TABLE `umkm`
   MODIFY `id_umkm` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;

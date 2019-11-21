@@ -6,22 +6,22 @@ class C_Berita extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_Berita');
         $this->load->model('M_Artikel');
-	}
+    }
 
-	public function ShowBerita()
+    public function ShowBerita()
     {
         $this->load->view('template/nav');
         $jumlah_data = $this->M_Berita->jumlah_berita();
        //konfigurasi pagination
-       $this->load->library('pagination');
+        $this->load->library('pagination');
         $config['base_url'] = base_url().'C_Berita/ShowBerita/';
-       $config['total_rows'] = $jumlah_data;
+        $config['total_rows'] = $jumlah_data;
         $config['per_page'] = 2;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
 
-         $config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -39,14 +39,13 @@ class C_Berita extends CI_Controller {
         $config['first_tagl_close'] = '</span></li>';
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
- 
-    $this->pagination->initialize($config);
+
+        $this->pagination->initialize($config);
         $data['berita'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
- 
-        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+
         $data['berita'] = $this->M_Berita->getBeritaPerPage($config["per_page"], $data['berita']); 
         $data['pagination'] = $this->pagination->create_links();
- 
+
         
         $data['berita2'] = $this->M_Berita->getBeritaTerbaru();
         $data['artikel'] = $this->M_Artikel->getArtikelTerbaru();
@@ -54,84 +53,114 @@ class C_Berita extends CI_Controller {
         $this->load->view('template/footer');
     }
 
-	public function tambah()
-	{
-		$judul_berita = $this->input->post('judul_berita', true);
-		$isi = $this->input->post('isi_berita', true);
-        $this->load->library('upload');
-        $config['upload_path'] = './Assets/foto/'; 
-        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
-        $config['max_size'] = '1024'; 
-        $config['file_name'] = $judul_berita."_".time();
-        $this->upload->initialize($config);
-        if($_FILES['foto_berita']['name'])
+    public function tambah()
+    {
+      $judul_berita = $this->input->post('judul_berita', true);
+      $isi = $this->input->post('isi_berita', true);
+      $nama_penulis = $this->input->post('nama_penulis', true);
+      $status = $this->input->post('status', true);
+      $this->load->library('upload');
+      $config['upload_path'] = './Assets/foto/'; 
+      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
+      $config['max_size'] = '1024'; 
+      $config['file_name'] = $judul_berita."_".time();
+      $this->upload->initialize($config);
+      if($_FILES['foto_berita']['name'])
+      {
+        if ($this->upload->do_upload('foto_berita'))
         {
-            if ($this->upload->do_upload('foto_berita'))
-            {
-                $foto = $this->upload->data();
-                $this->M_Berita->tambahBerita($judul_berita, $isi, $foto['file_name']);
-                redirect('C_Admin/ShowHalamanBerita');
+            $foto = $this->upload->data();
+            $this->M_Berita->tambahBerita($judul_berita, $isi, $foto['file_name'],$nama_penulis,$status);
+            redirect('C_Admin/ShowHalamanBerita');
 
-            }
         }
     }
+}
 
-    public function hapusBerita(){
-        $id_berita = $this->input->get('id_berita', true);
-        $this->M_Berita->hapusBerita($id_berita);
-        redirect('C_Admin/ShowHalamanBerita');
-    }
-
-    public function showSingleBerita()
+public function userTambah()
+{
+    $judul_berita = $this->input->post('judul_berita', true);
+    $isi = $this->input->post('isi_berita', true);
+    $nama_penulis = $this->input->post('nama_penulis', true);
+    $status = $this->input->post('status', true);
+    $this->load->library('upload');
+    $config['upload_path'] = './Assets/foto/'; 
+    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
+    $config['max_size'] = '1024'; 
+    $config['file_name'] = $judul_berita."_".time();
+    $this->upload->initialize($config);
+    if($_FILES['foto_berita']['name'])
     {
-        $this->load->view('template/nav');
-        $data['artikel'] = $this->M_Artikel->getArtikelTerbaru();
-        $data['berita'] = $this->M_Berita->getBeritaTerbaru();
-        $id_berita = $this->input->get('id_berita', true);
-        $data['berita2'] = $this->M_Berita->getSingleBerita($id_berita);
-        $this->load->view('PageShowBerita',$data);
-        $this->load->view('template/footer');
-    }
-
-    public function edit(){
-        $id_berita = $this->input->get('id_berita', true);
-        $judul_berita = $this->input->post('judul_berita', true);
-        $isi = $this->input->post('isi_berita', true);
-        $this->load->library('upload');
-        $config['upload_path'] = './Assets/foto/'; 
-        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
-        $config['max_size'] = '1024'; 
-        $config['file_name'] = $judul_berita."_".time();
-        $this->upload->initialize($config);
-        if($_FILES['foto_berita']['name'])
+        if ($this->upload->do_upload('foto_berita'))
         {
-            if ($this->upload->do_upload('foto_berita'))
-            {
-                $foto = $this->upload->data();
-                $this->M_Berita->updateBerita($id_berita, $judul_berita, $isi, $foto['file_name']);
-                redirect('C_Admin/ShowHalamanBerita');
+            $foto = $this->upload->data();
+            $this->M_Berita->tambahBerita($judul_berita, $isi, $foto['file_name'],$nama_penulis,$status);
+            redirect('C_Home');
 
-            }
         }
-
-
-        
     }
+}
 
-    public function showDetailBerita()
+public function hapusBerita(){
+    $id_berita = $this->input->get('id_berita', true);
+    $this->M_Berita->hapusBerita($id_berita);
+    redirect('C_Admin/ShowHalamanBerita');
+}
+
+public function showSingleBerita()
+{
+    $this->load->view('template/nav');
+    $data['artikel'] = $this->M_Artikel->getArtikelTerbaru();
+    $data['berita'] = $this->M_Berita->getBeritaTerbaru();
+    $id_berita = $this->input->get('id_berita', true);
+    $data['berita2'] = $this->M_Berita->getSingleBerita($id_berita);
+    $this->load->view('PageShowBerita',$data);
+    $this->load->view('template/footer');
+}
+
+public function edit(){
+    $id_berita = $this->input->get('id_berita', true);
+    $judul_berita = $this->input->post('judul_berita', true);
+    $isi = $this->input->post('isi_berita', true);
+    $status = $this->input->post('status', true);
+    $this->load->library('upload');
+    $config['upload_path'] = './Assets/foto/'; 
+    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
+    $config['max_size'] = '1024'; 
+    $config['file_name'] = $judul_berita."_".time();
+    $this->upload->initialize($config);
+    if($_FILES['foto_berita']['name'])
     {
-        $this->load->view('Admin/navAdmin');
-        $id_berita = $this->input->get('id_berita', true);
-        $data['berita'] = $this->M_Berita->getSingleBerita($id_berita);
-        $this->load->view('Admin/detailBerita',$data);
-        
-    }
+        if ($this->upload->do_upload('foto_berita'))
+        {
+            $foto = $this->upload->data();
+            $this->M_Berita->updateBerita($id_berita, $judul_berita, $isi, $foto['file_name'], $status);
+            redirect('C_Admin/ShowHalamanBerita');
 
-    public function showHalamanEditBerita(){
-        $this->load->view('Admin/navAdmin');
-        $id_berita = $this->input->get('id_berita', true);
-        $data['berita'] = $this->M_Berita->getSingleBerita($id_berita);
-        $this->load->view('Admin/editBerita',$data);
+        }
     }
+}
+
+public function showDetailBerita()
+{
+    $this->load->view('Admin/navAdmin');
+    $id_berita = $this->input->get('id_berita', true);
+    $data['berita'] = $this->M_Berita->getSingleBerita($id_berita);
+    $this->load->view('Admin/detailBerita',$data);
+
+}
+
+public function showHalamanEditBerita(){
+    $this->load->view('Admin/navAdmin');
+    $id_berita = $this->input->get('id_berita', true);
+    $data['berita'] = $this->M_Berita->getSingleBerita($id_berita);
+    $this->load->view('Admin/editBerita',$data);
+}
+
+public function ShowUserTambahBerita()
+{
+    $this->load->view('template/nav');
+    $this->load->view('PageUserTambah');
+}
 
 }

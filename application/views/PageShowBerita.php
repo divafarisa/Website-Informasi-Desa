@@ -68,6 +68,9 @@
                          <div class="post-meta">
                                 <a><?php echo $b->tanggal_berita?></a>
                             </div>
+                            <div class="post-meta">
+                                <p>Penulis : <?php echo $b->nama_penulis?></p>
+                            </div>
                                  
                             <div class="blog-thumb mb-30">
                             <img src="<?php echo base_url();?>Assets/foto/<?php echo $b->foto_berita?>" alt="">

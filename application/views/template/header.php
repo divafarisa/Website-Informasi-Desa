@@ -63,6 +63,7 @@
               KELEMBAGAAN
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">TAMBAH BERITA</a>
               <a class="dropdown-item" href="#">BERITA</a>
               <a class="dropdown-item" href="#">ARTIKEL</a>
               
