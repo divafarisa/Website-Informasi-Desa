@@ -27,89 +27,89 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowHalamanBerita">
-          <i class="fas fa-fw fa-newspaper"></i>
-          <span>Berita Desa</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Artikel/ShowHalamanArtikel">
-          <i class="fas fa-fw fa-book"></i>
-          <span>Artikel Desa</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_APBD/ShowHalamanApbd">
-          <i class="fas fa-fw fa-cart-plus"></i>
-          <span>APBD</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Galeri/ShowHalamanGaleri">
-          <i class="fas fa-fw fa-file-image"></i>
-          <span>Gambar</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Umkm/ShowHalamanUmkm">
-          <i class="fas fa-fw fa-industry"></i>
-          <span>UMKM</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Organisasi/ShowHalamanOrganisasi">
-          <i class="fas fa-fw fa-users"></i>
-          <span>Organisasi</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_PerangkatDesa/ShowHalamanPerangkatDesa">
-          <i class="fas fa-fw fa-handshake"></i>
-          <span>Perangkat Desa</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Demografis/ShowHalamanDemografis">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Demografis Warga</span>
-        </a>
-      </li>
-      
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
-          <i class="fas fa-fw fa-phone"></i>
-          <span>Kontak</span>
-        </a>
-      </li>
-      
-      
-    </ul>
-    <!--end of Sidebar-->
+   <ul class="sidebar navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowHalamanBerita">
+        <i class="fas fa-fw fa-newspaper"></i>
+        <span>Berita Desa</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Artikel/ShowHalamanArtikel">
+        <i class="fas fa-fw fa-book"></i>
+        <span>Artikel Desa</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_APBD/ShowHalamanApbd">
+        <i class="fas fa-fw fa-cart-plus"></i>
+        <span>APBD</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Galeri/ShowHalamanGaleri">
+        <i class="fas fa-fw fa-file-image"></i>
+        <span>Gambar</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Umkm/ShowHalamanUmkm">
+        <i class="fas fa-fw fa-industry"></i>
+        <span>UMKM</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Organisasi/ShowHalamanOrganisasi">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Organisasi</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_PerangkatDesa/ShowHalamanPerangkatDesa">
+        <i class="fas fa-fw fa-handshake"></i>
+        <span>Perangkat Desa</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Demografis/ShowHalamanDemografis">
+        <i class="fas fa-fw fa-home"></i>
+        <span>Demografis Warga</span>
+      </a>
+    </li>
 
-    <div id="content-wrapper">
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
+        <i class="fas fa-fw fa-phone"></i>
+        <span>Kontak</span>
+      </a>
+    </li>
 
-      <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a ><center>Tambah Berita</center></a>
-          </li>
-          
-        </ol>
+  </ul>
+  <!--end of Sidebar-->
 
-        <?php 
-           $no=1;
-           if (is_array($berita) || is_object($berita)){
-           foreach ($berita as $b){ ?>
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a ><center>Edit Berita</center></a>
+        </li>
+
+      </ol>
+
+      <?php 
+      $no=1;
+      if (is_array($berita) || is_object($berita)){
+       foreach ($berita as $b){ ?>
 
         <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Berita/edit?id_berita=<?php echo $b->id_berita?>">
           <p>Judul Berita : </p>
@@ -117,31 +117,40 @@
             <input class="form-control" name="judul_berita" id="judul_berita" type="text"  required="required" value="<?php echo $b->judul_berita ?>">
             <p class="help-block text-danger"></p>
           </div>
+          <p>Penulis Berita : <?php echo $b->nama_penulis ?></p>
           <p>Isi Berita : </p>
           <div class="form-group">
 
             <textarea class="form-control" name="isi_berita" id="isi_berita" required="required" ><?php echo $b->isi_berita?></textarea>
             <p class="help-block text-danger"></p>
-            </div>
+          </div>
           <p>Foto Berita : </p>
           <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a >Upload ulang foto, jika tidak maka berita tidak memiliki foto!</a>
-          </li>
-          
-        </ol>
+            <li class="breadcrumb-item">
+              <a >Upload ulang foto, jika tidak maka berita tidak memiliki foto!</a>
+            </li>
+
+          </ol>
           <div class="form-group">
             <input type="file" id="foto_berita" name="foto_berita" value="<?php echo $b->foto_berita ?>" required="required">
 
             <p class="help-block text-danger"></p>
           </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select name="status" id="status" required="">
+              <option value="terbit" <?php if($b->status == "terbit") { echo "SELECTED"; } ?>>Terbit</option>
+              <option value="pending" <?php if($b->status == "pending") { echo "SELECTED"; } ?>>Pending</option>
+              <option value="revisi" <?php if($b->status == "revisi") { echo "SELECTED"; } ?>>Revisi</option>
+            </select>
+          </div>
           <div class="col-lg-12 text-center">
             <div id="success"></div>
             <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Simpan Pembaruan</button>
-            </div>
+          </div>
           
         </form>
-        <?php } } ?>
+      <?php } } ?>
     </div>
     <!-- /.content-wrapper -->
 
