@@ -68,9 +68,6 @@
                          <div class="post-meta">
                                 <a><?php echo $b->tanggal_berita?></a>
                             </div>
-                            <div class="post-meta">
-                                <p>Penulis : <?php echo $b->nama_penulis?></p>
-                            </div>
                                  
                             <div class="blog-thumb mb-30">
                             <img src="<?php echo base_url();?>Assets/foto/<?php echo $b->foto_berita?>" alt="">
@@ -81,8 +78,49 @@
                            
                             <p><?php echo $b->isi_berita?></p> 
                         </div>
-                <?php } } ?>
-                </div>
+                
+                </div> <h4 class="f1-l-4 cl3 p-b-12">
+                Leave a Comment
+              </h4>
+
+              <p class="f1-s-13 cl8 p-b-40">
+                Your email address will not be published. Required fields are marked *
+              </p>
+              <form  method="post" action="<?php echo base_url();?>C_Comment/tambah">
+               
+
+                <input  type="text" name="username" placeholder="Username*" required>
+                <br>
+<br>
+                <input  type="email" name="email" placeholder="Email*" required>
+                <br>
+<br>
+                <textarea  name="isi" placeholder="Comment..." required></textarea>
+                <br>
+<br>
+ <input type="text" name="id_berita" value=<?php echo $b->id_berita ?> hidden >
+                <button  >
+                  Post Comment
+                </button>
+
+                            <?php
+echo "</b>";           
+echo "<h5>" . "Current comment(s)..." . "</h5>";
+echo "<b>" . $jumlah_comment . " comment(s) so far. Leave a comment..." .
+"</b>" . "<br />" . "<br />";
+echo "<hr>";
+foreach ($comment -> result_array() as $op) {
+    if ($op['id_berita']==$b->id_berita){       
+ echo "<b>" . $op['username'] . "</b>" . " " . " | " . " " . "<i>" .
+$op['isi'] . "</i>" . "<br />" . "<br />" . $op['email'] . "<br />";
+ echo "<hr>";
+ }
+
+}
+?>
+              </form>
+             
+  <?php } } ?>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
@@ -128,6 +166,7 @@
             </div>
         </div>
     </div>
+     
     <!-- ##### Archive Post Area End ##### -->
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->

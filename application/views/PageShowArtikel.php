@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Halaman Artikel-Desa Sumberejo</title>
+    <title>Halaman Artikel-Desa Sumberejo</title>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="<?php echo base_url();?>Assets/css/style.css">
 
@@ -15,7 +15,7 @@
 
 <body>
     <!-- Preloader -->
-  
+    
     <!-- ##### Breadcrumb Area Start ##### -->
     <section class="breadcrumb-area bg-img bg-overlay" style="background-color: black;">
         <div class="container h-100">
@@ -57,45 +57,45 @@
                     <?php 
                     $no=1;
                     if (is_array($artikel2) || is_object($artikel2)){
-                    foreach ($artikel2 as $a){ ?>
+                        foreach ($artikel2 as $a){ ?>
                           <div class="section-home">
                             <h4 class="post-title" style="text-align: center;"><?php echo $a->judul_artikel?></h4>
-                         </div>  
+                        </div>  
 
-                         <div class="post-meta">
-                                <a><?php echo $a->tanggal_artikel?></a>
-                            </div>
-                                 
-                            <div class="blog-thumb mb-30">
+                        <div class="post-meta">
+                            <a><?php echo $a->tanggal_artikel?></a>
+                        </div>
+                        
+                        <div class="blog-thumb mb-30">
                             <img src="<?php echo base_url();?>Assets/foto/<?php echo $a->foto_artikel?>" alt="">
                         </div>
                         <!-- Single Catagory Post -->
 
-                    <div class="blog-content">
-                           
+                        <div class="blog-content">
+                         
                             <p><?php echo $a->isi_artikel?></p> 
                         </div>
-                <?php } } ?>
+                    <?php } } ?>
                 </div>
-                </div>
+            </div>
 
-                <div class="col-12 col-md-6 col-lg-5 col-xl-4">
-                    <div class="sidebar-area bg-white mb-30 box-shadow">
-                        
+            <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+                <div class="sidebar-area bg-white mb-30 box-shadow">
+                    
 
-                        <!-- Sidebar Widget -->
-                        <div class="single-sidebar-widget p-30">
-                            <!-- Section Title -->
-                            <div class="section-heading">
-                                <h5>Berita Terbaru</h5>
-                            </div>
-                            <ul class="catagory-widgets">
+                    <!-- Sidebar Widget -->
+                    <div class="single-sidebar-widget p-30">
+                        <!-- Section Title -->
+                        <div class="section-heading">
+                            <h5>Berita Terbaru</h5>
+                        </div>
+                        <ul class="catagory-widgets">
                             <?php 
                             $no=1;
                             if (is_array($berita) || is_object($berita)){
-                            foreach ($berita as $b){ ?>
+                                foreach ($berita as $b){ ?>
 
-                                <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $b->judul_berita ?></span></a></li>
+                                    <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $b->judul_berita ?></span></a></li>
                                 <?php } } ?>
                             </ul>
                         </div>
@@ -106,33 +106,33 @@
                                 <h5>Artikel Terbaru</h5>
                             </div>
                             <ul class="catagory-widgets">
-                            <?php 
-                            $no=1;
-                            if (is_array($artikel) || is_object($artikel)){
-                            foreach ($artikel as $a){ ?>
+                                <?php 
+                                $no=1;
+                                if (is_array($artikel) || is_object($artikel)){
+                                    foreach ($artikel as $a){ ?>
 
-                                <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $a->judul_artikel ?></span></a></li>
-                                <?php } } ?>
-                            </ul>
+                                        <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $a->judul_artikel ?></span></a></li>
+                                    <?php } } ?>
+                                </ul>
+                            </div>
+                            
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ##### Archive Post Area End ##### -->
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="<?php echo base_url();?>Assets/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="<?php echo base_url();?>Assets/js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="<?php echo base_url();?>Assets/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="<?php echo base_url();?>Assets/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="<?php echo base_url();?>Assets/js/active.js"></script>
-</body>
+        <!-- ##### Archive Post Area End ##### -->
+        <!-- ##### All Javascript Script ##### -->
+        <!-- jQuery-2.2.4 js -->
+        <script src="<?php echo base_url();?>Assets/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="<?php echo base_url();?>Assets/js/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="<?php echo base_url();?>Assets/js/bootstrap/bootstrap.min.js"></script>
+        <!-- All Plugins js -->
+        <script src="<?php echo base_url();?>Assets/js/plugins/plugins.js"></script>
+        <!-- Active js -->
+        <script src="<?php echo base_url();?>Assets/js/active.js"></script>
+    </body>
 
-</html>
+    </html>

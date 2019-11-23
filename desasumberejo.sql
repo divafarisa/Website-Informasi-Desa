@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2019 at 11:55 AM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: Nov 22, 2019 at 06:21 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -130,7 +130,33 @@ INSERT INTO `berita` (`id_berita`, `judul_berita`, `tanggal_berita`, `isi_berita
 (15, 'Sumberejo Jadi Desa Percontohan Pemberdayaan Desa', '2019-09-26 08:57:47.698804', '  Hari sabtu kemarin (6/01) kantor Balai Desa Sumberejo terlihat penuh oleh rombongan dari Desa Manyarejo Gresik. Mulai pukul 11.30 WIB, rombongan yang berjumlah sekitar 80 orang termasuk mengunjungi Desa Sumberejo yaitu dalam rangka studi banding pemberdayaan desa. Rombongan dari Gresik merupakan gabungan dari tim pembentukan dan penguatan kader pemberdayaan Desa Manyarejo Kecamatan Manyar Kabupaten Gresik sekaligus sebagian perangkat desa seperti Kepdes dan Sekdes. Kader yang diikutkan pada kegiatan studi banding ini merupakan gabungan ibu-ibu dari anggota guru, PKK, maupun ibu-ibu pejabat desa. Kunjungan ini bertujuan untuk menambah wawasan dan bagi kader Desa Manyarejo untuk pemberdayaan desa terlebih dalam mempercantik lingkungan yang notabene memiliki kemiripan dengan Desa Sumberejo yaitu sebagai lingkungan sentra sayuran.\r\n\r\n            Kegiatan ini dibuka dengan pembacaan susunan acara dan doa oleh mahasiswa KKM dari UIN Malang yang sedang mengabdi di Desa Sumberejo. Acara dilanjutkan dengan sambutan oleh Kepala Desa Manyarejo. Tidak mengambil waktu lama, acara selanjutnya yakni acara inti yang diisi materi oleh Bapak Suharsono, S.H selaku koordinator Desa Wisata Sumberejo sekaligus perangkat desa. Materi yang disampaikan bertema pengelolaan lingkungan berbasir masyarakat yang meliputi (KRPL) Kawasan Rumah Pangan Lestari dan bank sampah. Setelah mendapatkan materi, rombongan diajak untuk berkeliling di RW 07 yang baru saja mendapatkan juara pertama sebagai kampung tercantik se-Kota Batu di tahun 2018.  Diharapkan acara ini dapat mempererat tali silaturrahim antar Desa Manyarejo dan Desa Sumberejo sekaligus adanya transfer ilmu antardesa sehingga program pemberdayaan desa dapat terlaksana secara maksimal.', 'Sumberejo_Jadi_Desa_Percontohan_Pemberdayaan_Desa_1574310995.jpg', 'Desa Sumberejo', 'terbit'),
 (17, 'Ini berita', '2019-09-26 11:48:29.448525', 'Ini berita', 'Ini_berita_1574310962.jpg', 'Desa Sumberejo', 'terbit'),
 (19, 'mari kita coba', '2019-11-21 10:56:09.009369', 'haiiii', 'mari_kita_coba_1574311041.jpg', 'Desa Sumberejo', 'pending'),
-(20, 'bismillah', '2019-11-21 12:30:09.112392', 'haiiii', 'bismillah_1574314209.png', 'momo', 'terbit');
+(20, 'bismillah', '2019-11-21 12:30:09.112392', 'haiiii', 'bismillah_1574314209.png', 'momo', 'terbit'),
+(22, 'apa', '2019-11-22 22:47:33.501493', 'apa an yaa', 'apa_1574437653.jpg', 'nisa', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `isi` varchar(255) NOT NULL,
+  `id_berita` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `username`, `email`, `isi`, `id_berita`) VALUES
+(40, 'ty', 'nuranisa@gmail.com', 'hg', 17),
+(42, 'ty', 'nuranisa@gmail.com', 'hg', 17),
+(44, 'wrewtre', 'nuranisa@gmail.com', 'w2', 17),
+(45, 'anisa', 'nuranisa@gmail.com', 'x', 17),
+(46, '165150201111248', 'admin@gmail.com', 'ffff', 17);
 
 -- --------------------------------------------------------
 
@@ -323,6 +349,12 @@ ALTER TABLE `berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `etnis`
 --
 ALTER TABLE `etnis`
@@ -396,7 +428,13 @@ ALTER TABLE `artikel`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `etnis`

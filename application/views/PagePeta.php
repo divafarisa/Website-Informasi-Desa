@@ -9,10 +9,10 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     
-   <title>Halaman Peta-Desa Sumberejo</title>
+    <title>Halaman Peta-Desa Sumberejo</title>
 
     <!-- Stylesheet -->
- <link rel="stylesheet" href="<?php echo base_url();?>Assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>Assets/css/style.css">
 
 </head>
 
@@ -34,7 +34,7 @@
     </section>
     <!-- ##### Breadcrumb Area End ##### -->
 
-  
+    
     <!-- ##### About Us Area Start ##### -->
     <section class="about-us-area">
         <div class="container">
@@ -53,19 +53,19 @@
 
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                     <div class="sidebar-area bg-white mb-30 box-shadow" style="margin-top: -80px;">
-                           <!-- Sidebar Widget -->
-                        <div class="single-sidebar-widget p-30">
-                            <!-- Section Title -->
-                            <div class="section-heading">
-                                <h5>Berita Terbaru</h5>
-                            </div>
-                            <ul class="catagory-widgets">
+                     <!-- Sidebar Widget -->
+                     <div class="single-sidebar-widget p-30">
+                        <!-- Section Title -->
+                        <div class="section-heading">
+                            <h5>Berita Terbaru</h5>
+                        </div>
+                        <ul class="catagory-widgets">
                             <?php 
                             $no=1;
                             if (is_array($berita) || is_object($berita)){
-                            foreach ($berita as $b){ ?>
+                                foreach ($berita as $b){ ?>
 
-                                <li><a href="<?php echo base_url();?>C_Berita/showSingleBerita?id_berita=<?php echo $b->id_berita?>"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $b->judul_berita ?></span></a></li>
+                                    <li><a href="<?php echo base_url();?>C_Berita/showSingleBerita?id_berita=<?php echo $b->id_berita?>"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $b->judul_berita ?></span></a></li>
                                 <?php } } ?>
                             </ul>
                         </div>
@@ -76,36 +76,36 @@
                                 <h5>Artikel Terbaru</h5>
                             </div>
                             <ul class="catagory-widgets">
-                            <?php 
-                            $no=1;
-                            if (is_array($artikel) || is_object($artikel)){
-                            foreach ($artikel as $a){ ?>
+                                <?php 
+                                $no=1;
+                                if (is_array($artikel) || is_object($artikel)){
+                                    foreach ($artikel as $a){ ?>
 
-                                <li><a href="<?php echo base_url();?>C_Artikel/showSingleArtikel?id_artikel=<?php echo $a->id_artikel?>"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $a->judul_artikel ?></span></a></li>
-                                <?php } } ?>
-                            </ul>
+                                        <li><a href="<?php echo base_url();?>C_Artikel/showSingleArtikel?id_artikel=<?php echo $a->id_artikel?>"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $a->judul_artikel ?></span></a></li>
+                                    <?php } } ?>
+                                </ul>
+                            </div>
+                            
                         </div>
-                        
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ##### About Us Area End ##### -->
+        </section>
+        <!-- ##### About Us Area End ##### -->
 
-   
         
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="<?php echo base_url();?>Assets/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="<?php echo base_url();?>Assets/js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="<?php echo base_url();?>Assets/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="<?php echo base_url();?>Assets/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="<?php echo base_url();?>Assets/js/active.js"></script>
-</body>
+        
+        <!-- ##### All Javascript Script ##### -->
+        <!-- jQuery-2.2.4 js -->
+        <script src="<?php echo base_url();?>Assets/js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="<?php echo base_url();?>Assets/js/bootstrap/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="<?php echo base_url();?>Assets/js/bootstrap/bootstrap.min.js"></script>
+        <!-- All Plugins js -->
+        <script src="<?php echo base_url();?>Assets/js/plugins/plugins.js"></script>
+        <!-- Active js -->
+        <script src="<?php echo base_url();?>Assets/js/active.js"></script>
+    </body>
 
-</html>
+    </html>

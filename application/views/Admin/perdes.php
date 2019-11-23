@@ -47,6 +47,12 @@
         </a>
       </li>
       <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Daftar Komen</span>
+        </a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_APBD/ShowHalamanApbd">
           <i class="fas fa-fw fa-cart-plus"></i>
           <span>APBD</span>
@@ -82,7 +88,12 @@
           <span>Demografis Warga</span>
         </a>
       </li>
-      
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Saran/ShowHalamanSaran">
+          <i class="fas fa-fw fa-envelope"></i>
+          <span>Saran</span>
+        </a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
           <i class="fas fa-fw fa-phone"></i>
@@ -109,62 +120,62 @@
         <br>
         <br>
         <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">Id Perangkat</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Jabatan</th>
-                <th scope="col">Tahun</th>
-                <th scope="col">Aksi </th>
-                </tr>
-            </thead>
+          <thead>
+            <tr>
+              <th scope="col">Id Perangkat</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Jabatan</th>
+              <th scope="col">Tahun</th>
+              <th scope="col">Aksi </th>
+            </tr>
+          </thead>
           <?php 
           $no=1;
           if (is_array($perdes) || is_object($perdes)){
-              foreach ($perdes as $p){ ?>
+            foreach ($perdes as $p){ ?>
               <tbody>
-              <td><?php echo $p->id_perangkat ?></td>
-              <td><?php echo $p->nama_perangkat ?></td>
-              <td><?php echo $p->jabatan_perangkat ?></td>
-              <td><?php echo $p->tahun_perangkat?></td>
-              <td>
-              <a href="<?php echo base_url();?>C_PerangkatDesa/hapusPerdes?id_perangkat=<?php echo $p->id_perangkat?>">Delete</a>
-              <a href="<?php echo base_url();?>C_PerangkatDesa/showHalamanEditPerdes?id_perangkat=<?php echo $p->id_perangkat?>">Edit</a>
-              </td>
+                <td><?php echo $p->id_perangkat ?></td>
+                <td><?php echo $p->nama_perangkat ?></td>
+                <td><?php echo $p->jabatan_perangkat ?></td>
+                <td><?php echo $p->tahun_perangkat?></td>
+                <td>
+                  <a href="<?php echo base_url();?>C_PerangkatDesa/hapusPerdes?id_perangkat=<?php echo $p->id_perangkat?>">Delete</a>
+                  <a href="<?php echo base_url();?>C_PerangkatDesa/showHalamanEditPerdes?id_perangkat=<?php echo $p->id_perangkat?>">Edit</a>
+                </td>
               </tbody>
-          <?php } } ?>
-      </table>    
-    </div>
-    <!-- /.content-wrapper -->
+            <?php } } ?>
+          </table>    
+        </div>
+        <!-- /.content-wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
+      </div>
+      <!-- /#wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
 
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
+      <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
+      <!-- Page level plugin JavaScript-->
+      <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
+      <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
+      <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
 
-  <!-- Demo scripts for this page-->
-  <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
-  <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
+      <!-- Demo scripts for this page-->
+      <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
+      <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>

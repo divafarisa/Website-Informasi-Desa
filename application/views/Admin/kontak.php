@@ -26,7 +26,7 @@
 
   <div id="wrapper">
 
-  <!-- Sidebar -->
+    <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -44,6 +44,12 @@
         <a class="nav-link" href="<?php echo base_url();?>C_Artikel/ShowHalamanArtikel">
           <i class="fas fa-fw fa-book"></i>
           <span>Artikel Desa</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Daftar Komen</span>
         </a>
       </li>
       <li class="nav-item active">
@@ -82,7 +88,12 @@
           <span>Demografis Warga</span>
         </a>
       </li>
-      
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Saran/ShowHalamanSaran">
+          <i class="fas fa-fw fa-envelope"></i>
+          <span>Saran</span>
+        </a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
           <i class="fas fa-fw fa-phone"></i>
@@ -94,7 +105,7 @@
     </ul>
     <!--end of Sidebar-->
 
-<div id="content-wrapper">
+    <div id="content-wrapper">
 
       <div class="container-fluid">
 
@@ -105,45 +116,45 @@
           </li>
           
         </ol>
-       <?php 
-           $no=1;
-           if (is_array($kontak) || is_object($kontak)){
-           foreach ($kontak as $k){ ?>
-        <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Kontak/update">
-          <p>Email : </p>
-          <div class="form-group">
-            <input class="form-control" name="email_kontak" id="email_kontak" type="Email"  required="required" value="<?php echo $k->email_kontak ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-          <p>No Telepon : </p>
-          <div class="form-group">
-            <input class="form-control" name="nohp_kontak" id="nohp_kontak" type="text"  required="required" value="<?php echo $k->nohp_kontak ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-          <p>Akun Instagram : </p>
-          <div class="form-group">
-            <input class="form-control" name="ig_kontak" id="ig_kontak" type="text"  value="<?php echo $k->ig_kontak ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-          <p>Akun Twitter : </p>
-          <div class="form-group">
-            <input class="form-control" name="tw_kontak" id="tw_kontak" type="text"  value="<?php echo $k->tw_kontak ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-          <p>Akun Facebook : </p>
-          <div class="form-group">
-            <input class="form-control" name="fb_kontak" id="fb_kontak" type="text"  value="<?php echo $k->fb_kontak ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-          <div class="col-lg-12 text-center">
-            <div id="success"></div>
-            <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Simpan Perubahan</button>
+        <?php 
+        $no=1;
+        if (is_array($kontak) || is_object($kontak)){
+         foreach ($kontak as $k){ ?>
+          <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Kontak/update">
+            <p>Email : </p>
+            <div class="form-group">
+              <input class="form-control" name="email_kontak" id="email_kontak" type="Email"  required="required" value="<?php echo $k->email_kontak ?>">
+              <p class="help-block text-danger"></p>
             </div>
-        </form>
+            <p>No Telepon : </p>
+            <div class="form-group">
+              <input class="form-control" name="nohp_kontak" id="nohp_kontak" type="text"  required="required" value="<?php echo $k->nohp_kontak ?>">
+              <p class="help-block text-danger"></p>
+            </div>
+            <p>Akun Instagram : </p>
+            <div class="form-group">
+              <input class="form-control" name="ig_kontak" id="ig_kontak" type="text"  value="<?php echo $k->ig_kontak ?>">
+              <p class="help-block text-danger"></p>
+            </div>
+            <p>Akun Twitter : </p>
+            <div class="form-group">
+              <input class="form-control" name="tw_kontak" id="tw_kontak" type="text"  value="<?php echo $k->tw_kontak ?>">
+              <p class="help-block text-danger"></p>
+            </div>
+            <p>Akun Facebook : </p>
+            <div class="form-group">
+              <input class="form-control" name="fb_kontak" id="fb_kontak" type="text"  value="<?php echo $k->fb_kontak ?>">
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="col-lg-12 text-center">
+              <div id="success"></div>
+              <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Simpan Perubahan</button>
+            </div>
+          </form>
         <?php } } ?>
+      </div>
+      <!-- /.content-wrapper -->
     </div>
-    <!-- /.content-wrapper -->
-</div>
   </div>
   <!-- /#wrapper -->
 
