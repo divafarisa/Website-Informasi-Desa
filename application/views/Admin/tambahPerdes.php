@@ -26,6 +26,7 @@
 
   <div id="wrapper">
 
+
  <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
@@ -88,7 +89,12 @@
           <span>Demografis Warga</span>
         </a>
       </li>
-      
+      <li class="nav-item active">
+      <a class="nav-link" href="<?php echo base_url();?>C_Saran/ShowHalamanSaran">
+        <i class="fas fa-fw fa-envelope"></i>
+        <span>Saran</span>
+      </a>
+    </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
           <i class="fas fa-fw fa-phone"></i>
@@ -133,7 +139,32 @@
             </div>
           
         </form>
+
         
+      </ol>
+      <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_PerangkatDesa/tambah">
+        <p>Nama : </p>
+        <div class="form-group">
+          <input class="form-control" name="nama_perdes" id="nama_perdes" type="text"  required="required" >
+          <p class="help-block text-danger"></p>
+        </div>
+        <p>Jabatan : </p>
+        <div class="form-group">
+          <input class="form-control" name="jabatan_perdes" id="jabatan_perdes" type="text"  required="required" >
+          <p class="help-block text-danger"></p>
+        </div>
+        <p>Tahun : </p>
+        <div class="form-group">
+          <input class="form-control" name="tahun_perdes" id="tahun_perdes" type="text"  required="required" >
+          <p class="help-block text-danger"></p>
+        </div>
+        <div class="col-lg-12 text-center">
+          <div id="success"></div>
+          <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Unggah</button>
+        </div>
+        
+      </form>
+      
     </div>
     <!-- /.content-wrapper -->
 

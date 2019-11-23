@@ -53,6 +53,12 @@
         </a>
       </li>
       <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Daftar Komen</span>
+        </a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_APBD/ShowHalamanApbd">
           <i class="fas fa-fw fa-cart-plus"></i>
           <span>APBD</span>
@@ -88,7 +94,12 @@
           <span>Demografis Warga</span>
         </a>
       </li>
-      
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Saran/ShowHalamanSaran">
+          <i class="fas fa-fw fa-envelope"></i>
+          <span>Saran</span>
+        </a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
           <i class="fas fa-fw fa-phone"></i>
@@ -114,64 +125,64 @@
         </ol>
 
         <?php 
-           $no=1;
-           if (is_array($profesi) || is_object($profesi)){
-           foreach ($profesi as $a){ ?>
+        $no=1;
+        if (is_array($profesi) || is_object($profesi)){
+         foreach ($profesi as $a){ ?>
 
-        <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Demografis/editProfesi?id_profesi=<?php echo $a->id_profesi?>">
-          <p>Nama Profesi : </p>
-          <div class="form-group">
-            <input class="form-control" name="nama_demo" id="nama_demo" type="text"  required="required" value="<?php echo $a->nama_profesi ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-          <p>Jumlah Laki Laki : </p>
-          <div class="form-group">
-            <input class="form-control" name="lk_profesi" id="lk_profesi" type="text"  required="required" value="<?php echo $a->lk_profesi ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-          <p>Jumlah Perempuan : </p>
-          <div class="form-group">
-            <input class="form-control" name="pr_profesi" id="pr_profesi" type="text"  required="required" value="<?php echo $a->pr_profesi ?>">
-            <p class="help-block text-danger"></p>
-          </div>
-         <div class="col-lg-12 text-center">
-            <div id="success"></div>
-            <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Simpan Pembaruan</button>
+          <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Demografis/editProfesi?id_profesi=<?php echo $a->id_profesi?>">
+            <p>Nama Profesi : </p>
+            <div class="form-group">
+              <input class="form-control" name="nama_demo" id="nama_demo" type="text"  required="required" value="<?php echo $a->nama_profesi ?>">
+              <p class="help-block text-danger"></p>
             </div>
-          
-        </form>
+            <p>Jumlah Laki Laki : </p>
+            <div class="form-group">
+              <input class="form-control" name="lk_profesi" id="lk_profesi" type="text"  required="required" value="<?php echo $a->lk_profesi ?>">
+              <p class="help-block text-danger"></p>
+            </div>
+            <p>Jumlah Perempuan : </p>
+            <div class="form-group">
+              <input class="form-control" name="pr_profesi" id="pr_profesi" type="text"  required="required" value="<?php echo $a->pr_profesi ?>">
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="col-lg-12 text-center">
+              <div id="success"></div>
+              <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Simpan Pembaruan</button>
+            </div>
+            
+          </form>
         <?php } } ?>
+      </div>
+      <!-- /.content-wrapper -->
+
     </div>
-    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
+    <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
 
-  <!-- Demo scripts for this page-->
-  <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
-  <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
+    <!-- Demo scripts for this page-->
+    <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
+    <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
 
-</body>
+  </body>
 
-</html>
+  </html>

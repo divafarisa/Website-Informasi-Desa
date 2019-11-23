@@ -27,6 +27,7 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
+
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -133,7 +134,31 @@
             </div>
           
         </form>
+
+      </ol>
+      <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Organisasi/tambah">
+        <p>Nama Organisasi : </p>
+        <div class="form-group">
+          <input class="form-control" name="nama_org" id="nama_org" type="text"  required="required" >
+          <p class="help-block text-danger"></p>
+        </div>
+        <p>Deskripsi Organisasi : </p>
+        <div class="form-group">
+          <textarea class="form-control" name="deskripsi_org" id="deskripsi_org" type="text"  required="required" ></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <p>Foto Organisasi : </p>
+        <div class="form-group">
+          <input type="file" id="foto_org" name="foto_org" required="required">
+          <p class="help-block text-danger"></p>
+        </div>
+        <div class="col-lg-12 text-center">
+          <div id="success"></div>
+          <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Unggah</button>
+        </div>
         
+      </form>
+      
     </div>
     <!-- /.content-wrapper -->
 

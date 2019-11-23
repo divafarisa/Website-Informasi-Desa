@@ -8,9 +8,9 @@ class C_Apbd extends CI_Controller {
 		$this->load->model('M_Artikel');
         $this->load->model('M_Berita');
         $this->load->model('M_Apbd'); 
-		
-	}
-	public function ShowHalamanTambahApbd()
+        
+    }
+    public function ShowHalamanTambahApbd()
     {
         $this->load->view('Admin/navAdmin');
         $this->load->view('Admin/tambahApbd');
@@ -49,19 +49,19 @@ class C_Apbd extends CI_Controller {
     }
 
 
-	public function ShowHalamanApbd()
-	{
-		$this->load->view('Admin/navAdmin');
-		$data['apbd'] = $this->M_Apbd->getApbd();
-		$this->load->view('Admin/apbd',$data);
-	}
+    public function ShowHalamanApbd()
+    {
+      $this->load->view('Admin/navAdmin');
+      $data['apbd'] = $this->M_Apbd->getApbd();
+      $this->load->view('Admin/apbd',$data);
+  }
 
-	public function hapusApbd(){
-        $id_apbd = $this->input->get('id_apbd', true);
-        $this->M_Apbd->hapusApbd($id_apbd);
-        redirect('C_Apbd/ShowHalamanApbd');
-    }
+  public function hapusApbd(){
+    $id_apbd = $this->input->get('id_apbd', true);
+    $this->M_Apbd->hapusApbd($id_apbd);
+    redirect('C_Apbd/ShowHalamanApbd');
+}
 
-	
+
 
 }

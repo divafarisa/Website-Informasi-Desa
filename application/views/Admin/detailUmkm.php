@@ -25,7 +25,7 @@
 <body id="page-top">
 
   <div id="wrapper">
-<!-- Sidebar -->
+    <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -90,6 +90,13 @@
       
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
+          <i class="fas fa-fw fa-envelope"></i>
+          <span>Saran</span>
+        </a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
           <i class="fas fa-fw fa-phone"></i>
           <span>Kontak</span>
         </a>
@@ -102,85 +109,85 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-      <div class="archive-post-area">
-        <div class="container">
+        <div class="archive-post-area">
+          <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-xl-8">
+              <div class="col-12 col-xl-8">
                 <div class="post-details-content bg-white mb-30 p-30 box-shadow">
-                    
-                    <?php 
-                    $no=1;
-                    if (is_array($umkm) || is_object($umkm)){
+                  
+                  <?php 
+                  $no=1;
+                  if (is_array($umkm) || is_object($umkm)){
                     foreach ($umkm as $b){ ?>
 
-                    <div class="blog-thumb mb-30">
-                            <img src="<?php echo base_url();?>Assets/foto/<?php echo $b->foto_umkm?>" width  = "700" height = "500" alt="">
-                        </div>
-                        <!-- Single Catagory Post -->
-                    
-                    <div class="blog-content">
-                            
-                            <h4 class="post-title"><?php echo $b->nama_umkm?></h4>
-                            <p style="text-align: justify;"><?php echo $b->deskripsi_umkm?></p>
-                               
-                        </div>
-
-                    <a href="<?php echo base_url();?>C_Umkm/showHalamanEditUmkm?id_umkm=<?php echo $b->id_umkm?>" class="btn btn-primary btn-md">Edit UMKM</a>
-
+                      <div class="blog-thumb mb-30">
+                        <img src="<?php echo base_url();?>Assets/foto/<?php echo $b->foto_umkm?>" width  = "700" height = "500" alt="">
+                      </div>
+                      <!-- Single Catagory Post -->
+                      
+                      <div class="blog-content">
                         
-                <?php } } ?>
+                        <h4 class="post-title"><?php echo $b->nama_umkm?></h4>
+                        <p style="text-align: justify;"><?php echo $b->deskripsi_umkm?></p>
+                        
+                      </div>
 
-                       </div>
-                       </div>
-                       </div>
-                       </div> 
+                      <a href="<?php echo base_url();?>C_Umkm/showHalamanEditUmkm?id_umkm=<?php echo $b->id_umkm?>" class="btn btn-primary btn-md">Edit UMKM</a>
 
-                    </div>
+                      
+                    <?php } } ?>
 
-        
-      </div>
-      <!-- /.container-fluid -->
+                  </div>
+                </div>
+              </div>
+            </div> 
 
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
           </div>
+
+          
         </div>
-      </footer>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2019</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
 
     </div>
-    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
+    <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
 
-  <!-- Demo scripts for this page-->
-  <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
-  <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
+    <!-- Demo scripts for this page-->
+    <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
+    <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
 
-</body>
+  </body>
 
-</html>
+  </html>

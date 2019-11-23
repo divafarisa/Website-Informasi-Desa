@@ -25,7 +25,6 @@
 <body id="page-top">
 
   <div id="wrapper">
-
    <!-- Sidebar -->
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
@@ -44,12 +43,6 @@
       <a class="nav-link" href="<?php echo base_url();?>C_Artikel/ShowHalamanArtikel">
         <i class="fas fa-fw fa-book"></i>
         <span>Artikel Desa</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
-        <i class="fas fa-fw fa-book"></i>
-        <span>Daftar Komen</span>
       </a>
     </li>
     <li class="nav-item active">
@@ -112,39 +105,29 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <h4>Berita</h4>
+          <h4>Saran</h4>
         </li>
         
       </ol>
-      <a href="<?php echo base_url();?>C_Admin/ShowHalamanTambahBerita" class="btn btn-primary btn-md">Tambah Berita</a>
       <br>
       <br>
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Id Berita</th>
-            <th scope="col">Judul Berita</th>
-            <th scope="col">Tanggal Unggah</th>
-            <th scope="col">Status</th>
-            <th scope="col">Foto</th>
-            <th scope="col">Hapus</th>
+            <th scope="col" >Id Saran</th>
+            <th scope="col" width="800px" >Isi</th>
+            <th scope="col" >Email</th>
           </tr>
         </thead>
+
         <?php 
         $no=1;
-        if (is_array($berita) || is_object($berita)){
-          foreach ($berita as $b){ ?>
+        if (is_array($saran) || is_object($saran)){
+          foreach ($saran as $s){ ?>
             <tbody>
-
-              <td><?php echo $b->id_berita ?></td>
-              <td><a href="<?php echo base_url();?>C_Berita/showDetailBerita?id_berita=<?php echo $b->id_berita?>" class="post-title"><?php echo $b->judul_berita ?></a></td>
-              <td><?php echo $b->tanggal_berita?></td>
-              <td><?php echo $b->status?></td>
-              <td><img src="<?php echo base_url();?>Assets/foto/<?php echo $b->foto_berita?>" width="100" height="100"></td>
-              <td>
-                <a href="<?php echo base_url();?>C_Berita/hapusBerita?id_berita=<?php echo $b->id_berita?>">Delete</a>
-                <a href="<?php echo base_url();?>C_Berita/showHalamanEditBerita?id_berita=<?php echo $b->id_berita?>">Edit</a>
-              </td>
+              <td><?php echo $s->id_saran?></td>
+              <td><?php echo $s->isi?></a></td>
+              <td><?php echo $s->email?></td>
             </tbody>
           <?php } } ?>
         </table>    

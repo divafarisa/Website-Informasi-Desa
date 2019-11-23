@@ -25,7 +25,7 @@
 <body id="page-top">
 
   <div id="wrapper">
-<!-- Sidebar -->
+    <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -87,7 +87,12 @@
           <span>Demografis Warga</span>
         </a>
       </li>
-      
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Saran/ShowHalamanSaran">
+          <i class="fas fa-fw fa-envelope"></i>
+          <span>Saran</span>
+        </a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
           <i class="fas fa-fw fa-phone"></i>
@@ -120,7 +125,7 @@
           <div class="form-group">
             <textarea class="form-control" name="caption_foto" id="caption_foto" required="required" ></textarea>
             <p class="help-block text-danger"></p>
-            </div>
+          </div>
           <p>Foto Berita : </p>
           <div class="form-group">
             <input type="file" id="foto_galeri" name="foto_galeri">
@@ -129,41 +134,41 @@
           <div class="col-lg-12 text-center">
             <div id="success"></div>
             <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Unggah</button>
-            </div>
+          </div>
           
         </form>
         
+      </div>
+      <!-- /.content-wrapper -->
+
     </div>
-    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url();?>Assets/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url();?>Assets/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="<?php echo base_url();?>Assets/chart.js/Chart.min.js"></script>
+    <script src="<?php echo base_url();?>Assets/datatables/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url();?>Assets/datatables/dataTables.bootstrap4.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url();?>Assets/js/sb-admin.min.js"></script>
 
-  <!-- Demo scripts for this page-->
-  <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
-  <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
+    <!-- Demo scripts for this page-->
+    <script src="<?php echo base_url();?>Assets/js/demo/datatables-demo.js"></script>
+    <script src="<?php echo base_url();?>Assets/js/demo/chart-area-demo.js"></script>
 
-</body>
+  </body>
 
-</html>
+  </html>
