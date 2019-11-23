@@ -45,6 +45,12 @@
           <span>Artikel Desa</span>
         </a>
       </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Daftar Komen</span>
+        </a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_APBD/ShowHalamanApbd">
           <i class="fas fa-fw fa-cart-plus"></i>

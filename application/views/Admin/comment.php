@@ -25,8 +25,7 @@
 <body id="page-top">
 
   <div id="wrapper">
-
-    <!-- Sidebar -->
+ <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -46,7 +45,7 @@
           <span>Artikel Desa</span>
         </a>
       </li>
-       <li class="nav-item active">
+     <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
           <i class="fas fa-fw fa-book"></i>
           <span>Daftar Komen</span>
@@ -105,35 +104,38 @@
       <div class="container-fluid">
 
         <!-- Breadcrumbs-->
-        
         <ol class="breadcrumb">
-          <li class="breadcrumb-item" >
-            <p style="text-align: center;"><center>Selamat Datang di Dashboard Admin Website Desa Sumberejo</center></p>
+          <li class="breadcrumb-item">
+            <h4>Daftar Komen</h4>
           </li>
           
         </ol>
-
-        <!-- Icon Cards-->
-        <div class="row">
-          
-         
-        </div>
-
-        
-
-        
-      </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © PKL Web 2019</span>
-          </div>
-        </div>
-      </footer>
-
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Id Komentar</th>
+                <th scope="col">id Beritar</th>
+                <th scope="col">komentar</th>
+                <th scope="col">Email Pengirim</th>
+                <th scope="col">Hapus</th>
+                </tr>
+            </thead>
+          <?php 
+          $no=1;
+          if (is_array($comment) || is_object($comment)){
+              foreach ($comment as $b){ ?>
+              <tbody>
+              <td><?php echo $b->id?></td>
+              <td><?php echo $b->id_berita ?></a></td>
+              <td><?php echo $b->isi?></td>
+              <td><?php echo $b->email?>
+              <td>
+              <a href="<?php echo base_url();?>C_Comment/hapusComment?id=<?php echo $b->id?>">Delete</a>
+              </tbody>
+          <?php } } ?>
+      </table>    
     </div>
     <!-- /.content-wrapper -->
 
