@@ -27,6 +27,7 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
+
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -121,6 +122,7 @@
       $no=1;
       if (is_array($org) || is_object($org)){
        foreach ($org as $b){ ?>
+
 
         <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Organisasi/edit?id_org=<?php echo $b->id_org?>">
           <p>Nama Organisasi : </p>

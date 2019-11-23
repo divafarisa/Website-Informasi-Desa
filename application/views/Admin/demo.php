@@ -25,6 +25,7 @@
 <body id="page-top">
 
   <div id="wrapper">
+
    <!-- Sidebar -->
    <!-- Sidebar -->
    <ul class="sidebar navbar-nav">
@@ -104,6 +105,7 @@
     
   </ul>
   <!--end of Sidebar-->
+
 
   <div id="content-wrapper">
 

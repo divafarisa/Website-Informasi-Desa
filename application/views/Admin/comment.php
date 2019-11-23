@@ -25,6 +25,7 @@
 <body id="page-top">
 
   <div id="wrapper">
+
    <!-- Sidebar -->
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
@@ -132,11 +133,13 @@
         if (is_array($comment) || is_object($comment)){
           foreach ($comment as $b){ ?>
             <tbody>
+
               <td><?php echo $b->id?></td>
               <td><?php echo $b->id_berita ?></a></td>
               <td><?php echo $b->isi?></td>
               <td><?php echo $b->email?>
               <td>
+
                 <a href="<?php echo base_url();?>C_Comment/hapusComment?id=<?php echo $b->id?>">Delete</a>
               </tbody>
             <?php } } ?>
@@ -175,3 +178,4 @@
     </body>
 
     </html>
+

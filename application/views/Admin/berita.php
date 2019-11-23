@@ -25,6 +25,7 @@
 <body id="page-top">
 
   <div id="wrapper">
+
    <!-- Sidebar -->
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
@@ -134,6 +135,7 @@
         if (is_array($berita) || is_object($berita)){
           foreach ($berita as $b){ ?>
             <tbody>
+
               <td><?php echo $b->id_berita ?></td>
               <td><a href="<?php echo base_url();?>C_Berita/showDetailBerita?id_berita=<?php echo $b->id_berita?>" class="post-title"><?php echo $b->judul_berita ?></a></td>
               <td><?php echo $b->tanggal_berita?></td>

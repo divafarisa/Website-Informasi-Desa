@@ -27,6 +27,7 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
+
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -104,6 +105,7 @@
     
   </ul>
   <!--end of Sidebar-->
+
 
   
 </ul>

@@ -27,93 +27,119 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
-   <ul class="sidebar navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowHalamanBerita">
-        <i class="fas fa-fw fa-newspaper"></i>
-        <span>Berita Desa</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Artikel/ShowHalamanArtikel">
-        <i class="fas fa-fw fa-book"></i>
-        <span>Artikel Desa</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
-        <i class="fas fa-fw fa-book"></i>
-        <span>Daftar Komen</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_APBD/ShowHalamanApbd">
-        <i class="fas fa-fw fa-cart-plus"></i>
-        <span>APBD</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Galeri/ShowHalamanGaleri">
-        <i class="fas fa-fw fa-file-image"></i>
-        <span>Gambar</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Umkm/ShowHalamanUmkm">
-        <i class="fas fa-fw fa-industry"></i>
-        <span>UMKM</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Organisasi/ShowHalamanOrganisasi">
-        <i class="fas fa-fw fa-users"></i>
-        <span>Organisasi</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_PerangkatDesa/ShowHalamanPerangkatDesa">
-        <i class="fas fa-fw fa-handshake"></i>
-        <span>Perangkat Desa</span>
-      </a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Demografis/ShowHalamanDemografis">
-        <i class="fas fa-fw fa-home"></i>
-        <span>Demografis Warga</span>
-      </a>
-    </li>
-    <li class="nav-item active">
+
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowHalamanBerita">
+          <i class="fas fa-fw fa-newspaper"></i>
+          <span>Berita Desa</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Artikel/ShowHalamanArtikel">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Artikel Desa</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Comment/ShowComment">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Daftar Komen</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_APBD/ShowHalamanApbd">
+          <i class="fas fa-fw fa-cart-plus"></i>
+          <span>APBD</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Galeri/ShowHalamanGaleri">
+          <i class="fas fa-fw fa-file-image"></i>
+          <span>Gambar</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Umkm/ShowHalamanUmkm">
+          <i class="fas fa-fw fa-industry"></i>
+          <span>UMKM</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Organisasi/ShowHalamanOrganisasi">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Organisasi</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_PerangkatDesa/ShowHalamanPerangkatDesa">
+          <i class="fas fa-fw fa-handshake"></i>
+          <span>Perangkat Desa</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Demografis/ShowHalamanDemografis">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Demografis Warga</span>
+        </a>
+      </li>
+      <li class="nav-item active">
       <a class="nav-link" href="<?php echo base_url();?>C_Saran/ShowHalamanSaran">
         <i class="fas fa-fw fa-envelope"></i>
         <span>Saran</span>
       </a>
     </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
-        <i class="fas fa-fw fa-phone"></i>
-        <span>Kontak</span>
-      </a>
-    </li>
-    
-    
-  </ul>
-  <!--end of Sidebar-->
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url();?>C_Kontak/ShowHalamanKontak">
+          <i class="fas fa-fw fa-phone"></i>
+          <span>Kontak</span>
+        </a>
+      </li>
+      
+      
+    </ul>
+    <!--end of Sidebar-->
 
-  <div id="content-wrapper">
+    <div id="content-wrapper">
 
-    <div class="container-fluid">
+      <div class="container-fluid">
 
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a ><center>Tambah UMKM</center></a>
-        </li>
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a ><center>Tambah UMKM</center></a>
+          </li>
+          
+        </ol>
+        <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Umkm/tambah">
+          <p>Nama UMKM : </p>
+          <div class="form-group">
+            <input class="form-control" name="nama_umkm" id="nama_umkm" type="text"  required="required" >
+            <p class="help-block text-danger"></p>
+          </div>
+          <p>Deskripsi UMKM : </p>
+          <div class="form-group">
+            <textarea class="form-control" name="deskripsi_umkm" id="deskripsi_umkm" type="text"  required="required" ></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+          <p>Foto UMKM : </p>
+          <div class="form-group">
+            <input type="file" id="foto_umkm" name="foto_umkm" required="required">
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="col-lg-12 text-center">
+            <div id="success"></div>
+            <button  class="btn btn-primary btn-xl text-uppercase" type="submit">Unggah</button>
+            </div>
+          
+        </form>
+
         
       </ol>
       <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Umkm/tambah">

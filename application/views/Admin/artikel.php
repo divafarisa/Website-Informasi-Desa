@@ -27,6 +27,7 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
+
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -134,6 +135,9 @@
         if (is_array($artikel) || is_object($artikel)){
           foreach ($artikel as $a){ ?>
             <tbody>
+
+ 
+
               <td><?php echo $a->id_artikel ?></td>
               <td><a href="<?php echo base_url();?>C_Artikel/showDetailArtikel?id_artikel=<?php echo $a->id_artikel?>" class="post-title"><?php echo $a->judul_artikel ?></a></td>
               <td><?php echo $a->tanggal_artikel?></td>

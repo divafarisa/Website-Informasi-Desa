@@ -27,6 +27,7 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
+
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -108,6 +109,7 @@
   <div id="content-wrapper">
 
     <div class="container-fluid">
+
       <div class="archive-post-area">
         <div class="container">
           <div class="row justify-content-center">

@@ -26,6 +26,7 @@
 
   <div id="wrapper">
 
+
    <!-- Sidebar -->
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
@@ -120,6 +121,7 @@
         <p>Jenis Demografis (Agama/Etnis/Profesi) : </p>
         <div class="form-group">
           <select name='demo'>
+
             <option value='agama'>Agama</option>
             <option value='etnis'>Etnis</option>
             <option value='profesi'>Profesi</option>

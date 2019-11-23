@@ -114,6 +114,7 @@
         <li class="breadcrumb-item">
           <a ><center>Tambah Artikel</center></a>
         </li>
+
         
       </ol>
       <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Artikel/tambah">

@@ -27,6 +27,7 @@
   <div id="wrapper">
 
    <!-- Sidebar -->
+
    <ul class="sidebar navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="<?php echo base_url();?>C_Admin/ShowDashboardAdmin">
@@ -122,6 +123,7 @@
       $no=1;
       if (is_array($etnis) || is_object($etnis)){
        foreach ($etnis as $a){ ?>
+
 
         <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>C_Demografis/editEtnis?id_etnis=<?php echo $a->id_etnis?>">
           <p>Nama Etnis : </p>
