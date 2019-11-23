@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_Berita extends CI_Controller {
+class C_Comment extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('M_Berita');
         $this->load->model('M_Artikel');
-         $this->load->model('M_Comment');
+        $this->load->model('M_Comment');
 	}
 
 	public function ShowBerita()
@@ -58,84 +58,48 @@ class C_Berita extends CI_Controller {
 
 	public function tambah()
 	{
-		$judul_berita = $this->input->post('judul_berita', true);
-		$isi = $this->input->post('isi_berita', true);
-        $this->load->library('upload');
-        $config['upload_path'] = './Assets/foto/'; 
-        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
-        $config['max_size'] = '1024'; 
-        $config['file_name'] = $judul_berita."_".time();
-        $this->upload->initialize($config);
-        if($_FILES['foto_berita']['name'])
-        {
-            if ($this->upload->do_upload('foto_berita'))
-            {
-                $foto = $this->upload->data();
-                $this->M_Berita->tambahBerita($judul_berita, $isi, $foto['file_name']);
-                redirect('C_Admin/ShowHalamanBerita');
 
-            }
-        }
+        $username = $this->input->post('username');
+        $email = $this->input->post('email');
+        $isi = $this->input->post('isi');
+        $id_berita = $this->input->post('id_berita');
+ 
+        $data = array(
+            'username' => $username,
+            'email' => $email,
+            'isi' => $isi,
+            'id_berita' => $id_berita
+            );
+        // var_dump($data);
+        $this->M_Comment->tambahComment($data);
+        
+        redirect('C_Berita/showSingleBerita?id_berita='.$id_berita );
+    
     }
-
-    public function hapusBerita(){
-        $id_berita = $this->input->get('id_berita', true);
-        $this->M_Berita->hapusBerita($id_berita);
-        redirect('C_Admin/ShowHalamanBerita');
+    public function showComment()
+    {
+        $this->load->view('Admin/navAdmin');
+        $data['comment'] = $this->M_Comment->getCommentt();
+        $this->load->view('Admin/comment',$data);
     }
-
-    public function showSingleBerita()
+     public function hapusComment(){
+        $id = $this->input->get('id', true);
+        $this->M_Comment->hapusComment($id);
+        redirect('C_Comment/ShowComment');
+    }
+     public function showSingleBerita()
     {
         $this->load->view('template/nav');
-        $data['artikel'] = $this->M_Artikel->getArtikelTerbaru();
         $data['berita'] = $this->M_Berita->getBeritaTerbaru();
         $id_berita = $this->input->get('id_berita', true);
-        $data['comment'] = $this->M_Comment->getComment();
-        $data['jumlah_comment'] = $this->M_Comment->getjumlahComment($id_berita);
         $data['berita2'] = $this->M_Berita->getSingleBerita($id_berita);
+        $data['berita3'] = $this->M_Comment->getAllComment($id_berita);
         $this->load->view('PageShowBerita',$data);
         $this->load->view('template/footer');
     }
-
-    public function edit(){
-        $id_berita = $this->input->get('id_berita', true);
-        $judul_berita = $this->input->post('judul_berita', true);
-        $isi = $this->input->post('isi_berita', true);
-        $this->load->library('upload');
-        $config['upload_path'] = './Assets/foto/'; 
-        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
-        $config['max_size'] = '1024'; 
-        $config['file_name'] = $judul_berita."_".time();
-        $this->upload->initialize($config);
-        if($_FILES['foto_berita']['name'])
-        {
-            if ($this->upload->do_upload('foto_berita'))
-            {
-                $foto = $this->upload->data();
-                $this->M_Berita->updateBerita($id_berita, $judul_berita, $isi, $foto['file_name']);
-                redirect('C_Admin/ShowHalamanBerita');
-
-            }
-        }
-
-
-        
+    function jumlah_comment(){
+        return $this->db->get('comment')->num_rows();
     }
 
-    public function showDetailBerita()
-    {
-        $this->load->view('Admin/navAdmin');
-        $id_berita = $this->input->get('id_berita', true);
-        $data['berita'] = $this->M_Berita->getSingleBerita($id_berita);
-        $this->load->view('Admin/detailBerita',$data);
-        
-    }
-
-    public function showHalamanEditBerita(){
-        $this->load->view('Admin/navAdmin');
-        $id_berita = $this->input->get('id_berita', true);
-        $data['berita'] = $this->M_Berita->getSingleBerita($id_berita);
-        $this->load->view('Admin/editBerita',$data);
-    }
-
+    
 }
