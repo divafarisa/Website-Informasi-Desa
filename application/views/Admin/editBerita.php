@@ -132,20 +132,19 @@
           </div>
           <p>Penulis Berita : <?php echo $b->nama_penulis ?></p>
           <p>Isi Berita : </p>
-          <div class="form-group">
 
+          <div class="form-group">
             <textarea class="form-control" name="isi_berita" id="isi_berita" required="required" ><?php echo $b->isi_berita?></textarea>
             <p class="help-block text-danger"></p>
           </div>
-          <p>Foto Berita : </p>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a >Upload ulang foto, jika tidak maka berita tidak memiliki foto!</a>
-            </li>
 
-          </ol>
-          <div class="form-group">
-            <input type="file" id="foto_berita" name="foto_berita" value="<?php echo $b->foto_berita ?>" required="required">
+            <p>Foto Berita : </p>
+            <div class="form-group">
+              <label>Foto</label>
+              <br/>
+              <?php echo '<img src="../Assets/foto/'.$b->foto_berita.'" alt="HTML5 Icon" style="width:40%;height:40%">'; ?>
+              <?php echo $b->foto_berita ?><br/>
+              <input type="file" id="foto_berita" name="foto_berita" value="<?php echo $b->foto_berita ?>">
 
             <p class="help-block text-danger"></p>
           </div>
