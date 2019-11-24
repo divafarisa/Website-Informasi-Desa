@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2019 at 06:21 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Nov 24, 2019 at 05:08 AM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -131,7 +131,8 @@ INSERT INTO `berita` (`id_berita`, `judul_berita`, `tanggal_berita`, `isi_berita
 (17, 'Ini berita', '2019-09-26 11:48:29.448525', 'Ini berita', 'Ini_berita_1574310962.jpg', 'Desa Sumberejo', 'terbit'),
 (19, 'mari kita coba', '2019-11-21 10:56:09.009369', 'haiiii', 'mari_kita_coba_1574311041.jpg', 'Desa Sumberejo', 'pending'),
 (20, 'bismillah', '2019-11-21 12:30:09.112392', 'haiiii', 'bismillah_1574314209.png', 'momo', 'terbit'),
-(22, 'apa', '2019-11-22 22:47:33.501493', 'apa an yaa', 'apa_1574437653.jpg', 'nisa', 'pending');
+(22, 'apa', '2019-11-22 22:47:33.501493', 'apa an yaa', 'apa_1574437653.jpg', 'nisa', 'tolak'),
+(23, 'Empat hari menuju idul adha', '2019-11-24 08:39:21.991348', 'alhamudlillah sudah menjelang idul adha', 'Empat_hari_menuju_idul_adha_1574559561.jpg', 'afifah', 'tolak');
 
 -- --------------------------------------------------------
 
@@ -156,7 +157,9 @@ INSERT INTO `comment` (`id`, `username`, `email`, `isi`, `id_berita`) VALUES
 (42, 'ty', 'nuranisa@gmail.com', 'hg', 17),
 (44, 'wrewtre', 'nuranisa@gmail.com', 'w2', 17),
 (45, 'anisa', 'nuranisa@gmail.com', 'x', 17),
-(46, '165150201111248', 'admin@gmail.com', 'ffff', 17);
+(46, '165150201111248', 'admin@gmail.com', 'ffff', 17),
+(48, 'afifah', 'ifa@gmail.com', 'hai juga :)', 20),
+(49, 'ifa', 'ifa@gmail.com', 'berita apa ini?', 17);
 
 -- --------------------------------------------------------
 
@@ -296,6 +299,26 @@ INSERT INTO `profesi` (`id_profesi`, `nama_profesi`, `lk_profesi`, `pr_profesi`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `saran`
+--
+
+CREATE TABLE `saran` (
+  `id_saran` int(11) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `isi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `saran`
+--
+
+INSERT INTO `saran` (`id_saran`, `email`, `isi`) VALUES
+(1, '087859342343123', 'tolong tambahkan informasi alur permintaan surat dan sebagainya'),
+(2, 'ifa@gmail.com', 'pingin bisa komen bagian organisasi dong :)');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `umkm`
 --
 
@@ -391,6 +414,12 @@ ALTER TABLE `profesi`
   ADD PRIMARY KEY (`id_profesi`);
 
 --
+-- Indexes for table `saran`
+--
+ALTER TABLE `saran`
+  ADD PRIMARY KEY (`id_saran`);
+
+--
 -- Indexes for table `umkm`
 --
 ALTER TABLE `umkm`
@@ -428,13 +457,13 @@ ALTER TABLE `artikel`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `etnis`
@@ -471,6 +500,12 @@ ALTER TABLE `perangkat`
 --
 ALTER TABLE `profesi`
   MODIFY `id_profesi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `saran`
+--
+ALTER TABLE `saran`
+  MODIFY `id_saran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `umkm`
