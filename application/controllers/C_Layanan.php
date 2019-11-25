@@ -78,6 +78,37 @@ class C_Layanan extends CI_Controller {
         }
     }
 
+    public function edit(){
+        $id_layanan = $this->input->get('id_layanan', true);
+        $judul_layanan = $this->input->post('judul_layanan', true);
+        $isi = $this->input->post('isi_layanan', true);
+        $this->load->library('upload');
+        $config['upload_path'] = './Assets/foto/'; 
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
+        $config['max_size'] = '1024'; 
+        $config['file_name'] = $judul_layanan."_".time();
+        $this->upload->initialize($config);
+        if($_FILES['foto_layanan']['name'])
+        {
+            if ($this->upload->do_upload('foto_layanan'))
+            {
+                $foto = $this->upload->data();
+                $this->M_Layanan->updateLayanan($id_layanan, $judul_layanan, $isi, $foto['file_name']);
+                redirect('C_Layanan/ShowHalamanLayanan');
+
+            }
+        }
+
+
+        
+    }
+    public function showHalamanEditLayanan(){
+        $this->load->view('Admin/navAdmin');
+        $id_layanan = $this->input->get('id_layanan', true);
+        $data['layanan'] = $this->M_Layanan->getSingleLayanan($id_layanan);
+        $this->load->view('Admin/editLayanan',$data);
+    }
+
 public function ShowHalamanLayanan()
     {
         $this->load->view('Admin/navAdmin');
