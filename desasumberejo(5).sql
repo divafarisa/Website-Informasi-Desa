@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2019 at 05:08 AM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: Nov 25, 2019 at 02:24 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -92,7 +92,7 @@ INSERT INTO `apbd` (`id_apbd`, `tahun_apbd`, `foto_apbd`) VALUES
 CREATE TABLE `artikel` (
   `id_artikel` int(10) NOT NULL,
   `judul_artikel` varchar(200) NOT NULL,
-  `tanggal_artikel` timestamp(6) NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `tanggal_artikel` timestamp(6) NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
   `isi_artikel` text NOT NULL,
   `foto_artikel` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -113,7 +113,7 @@ INSERT INTO `artikel` (`id_artikel`, `judul_artikel`, `tanggal_artikel`, `isi_ar
 CREATE TABLE `berita` (
   `id_berita` int(10) NOT NULL,
   `judul_berita` varchar(200) NOT NULL,
-  `tanggal_berita` datetime(6) DEFAULT current_timestamp(6),
+  `tanggal_berita` datetime(6) DEFAULT CURRENT_TIMESTAMP(6),
   `isi_berita` longtext NOT NULL,
   `foto_berita` varchar(255) DEFAULT NULL,
   `nama_penulis` varchar(30) NOT NULL,
@@ -192,7 +192,7 @@ CREATE TABLE `foto` (
   `id_foto` int(10) NOT NULL,
   `judul_foto` varchar(200) NOT NULL,
   `caption_foto` varchar(255) NOT NULL,
-  `tanggal_foto` datetime DEFAULT current_timestamp(),
+  `tanggal_foto` datetime DEFAULT CURRENT_TIMESTAMP,
   `foto_galeri` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -229,6 +229,27 @@ CREATE TABLE `kontak` (
 
 INSERT INTO `kontak` (`id_kontak`, `email_kontak`, `nohp_kontak`, `nowa_kontak`, `ig_kontak`, `fb_kontak`, `tw_kontak`) VALUES
 (1, 'desasumberejobatu@gmail.com', '(0341)- 598908', NULL, 'desasumberejobatukota', 'sumberejo', 'sumberejodesa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `layanan`
+--
+
+CREATE TABLE `layanan` (
+  `id_layanan` int(11) NOT NULL,
+  `judul_layanan` varchar(256) NOT NULL,
+  `tanggal_layanan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isi_layanan` longtext NOT NULL,
+  `foto_layanan` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `layanan`
+--
+
+INSERT INTO `layanan` (`id_layanan`, `judul_layanan`, `tanggal_layanan`, `isi_layanan`, `foto_layanan`) VALUES
+(1, 'Pengurusan Akte Kelahiran', '2019-11-25 00:33:18', 'test.', 'Pengurusan_Akte_Kelahiran_1574641998.jpg');
 
 -- --------------------------------------------------------
 
@@ -396,6 +417,12 @@ ALTER TABLE `kontak`
   ADD PRIMARY KEY (`id_kontak`);
 
 --
+-- Indexes for table `layanan`
+--
+ALTER TABLE `layanan`
+  ADD PRIMARY KEY (`id_layanan`);
+
+--
 -- Indexes for table `organisasi`
 --
 ALTER TABLE `organisasi`
@@ -482,6 +509,12 @@ ALTER TABLE `foto`
 --
 ALTER TABLE `kontak`
   MODIFY `id_kontak` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `layanan`
+--
+ALTER TABLE `layanan`
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `organisasi`
