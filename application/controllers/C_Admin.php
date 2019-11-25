@@ -8,7 +8,7 @@ class C_Admin extends CI_Controller {
 		$this->load->model('M_Berita');
 		$this->load->model('M_Artikel');
 		$this->load->model('M_Galeri');
-		
+		$this->load->model('M_Layanan');
 	}
 
 	public function ShowDashboardAdmin()

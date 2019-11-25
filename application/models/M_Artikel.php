@@ -47,19 +47,7 @@ public function getArtikelTerbaru(){
 
 
 
-    public function updateArtikel($id_artikel, $judul_artikel, $isi_artikel, $foto_artikel){
-        $data = array(
-            
-            'judul_artikel' => $judul_artikel,
-            'isi_artikel' => $isi_artikel,
-            'foto_artikel' => $foto_artikel
-            );
-         $where = array(
-            'id_artikel' => $id_artikel,
-        );
-    $this->db->where($where);
-    $this->db->update('artikel', $data);
-}
+   
 
     public function getSingleArtikel($id_artikel){
         $this->db->select('*'); //memeilih semua field
